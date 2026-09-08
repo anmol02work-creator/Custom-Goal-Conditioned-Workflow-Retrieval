@@ -43,3 +43,6 @@ Thumbs.db
 jarvis_workflow_retrieval_model.zip
 jarvis_workflow_retrieval_model/model/*.safetensors
 jarvis_workflow_retrieval_model/model/*.bin
+
+# Separate Model B standalone repository
+Stored-State vs Current-State Mismatch Classifier/
