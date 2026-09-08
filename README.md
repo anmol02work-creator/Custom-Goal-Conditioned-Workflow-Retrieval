@@ -1,5 +1,5 @@
 # Model A: Goal-Conditioned Workflow Retrieval Model
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/anmol02work-creator/Custom-Goal-Conditioned-Workflow-Retrieval/blob/main/JARVIS_Model_A_Workflow_Retrieval.ipynb)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Model Version](https://img.shields.io/badge/Model%20Version-JARVIS--WorkflowRetrieval--v2.0-orange.svg)]()
