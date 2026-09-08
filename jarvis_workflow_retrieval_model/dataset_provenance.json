@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Mind2Web: Towards a Generalist Agent for the Web",
+  "source_url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+  "official_homepage": "https://osu-nlp-group.github.io/Mind2Web/",
+  "paper_citation": "Mind2Web: Towards a Generalist Agent for the Web (NeurIPS 2023)",
+  "license": "CC BY 4.0",
+  "dataset_version": "17ece8eb89862368edc0cc806acee6fca5163474",
+  "download_date": "2026-09-06",
+  "preprocessing_version": "v1.0.0-clean-trajectories",
+  "number_of_original_corpus_examples": 2350,
+  "number_of_retained_examples": 60,
+  "filtering_rules": [
+    "Select verified web tasks with non-empty confirmed_task instructions.",
+    "Select instances with non-empty real action_reprs sequences.",
+    "Prune multi-megabyte raw_html and cleaned_html DOM trees to maintain memory efficiency.",
+    "Preserve original task_id (annotation_id), action_uid, domain, and website tags."
+  ],
+  "provenance_fields_in_examples": [
+    "dataset_name",
+    "task_id",
+    "trajectory_id",
+    "source_split",
+    "website",
+    "domain",
+    "subdomain"
+  ]
+}

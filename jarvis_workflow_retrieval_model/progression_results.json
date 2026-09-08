@@ -1,0 +1,34 @@
+{
+  "Stage 1: TF-IDF Lexical Baseline": {
+    "Recall@1": 0.5626666666666666,
+    "Recall@5": 0.8973333333333333,
+    "MRR": 0.7111140618739066,
+    "nDCG@5": 0.7506011960893707,
+    "Mean_Latency_ms": 0.8617337334823484,
+    "Median_Latency_ms": 0.7926000107545406
+  },
+  "Stage 2: SBERT Zero-Shot Semantic": {
+    "Recall@1": 0.58,
+    "Recall@5": 0.8973333333333333,
+    "MRR": 0.7211227756473985,
+    "nDCG@5": 0.7596730313649499,
+    "Mean_Latency_ms": 1559.383016400078,
+    "Median_Latency_ms": 1428.7746499903733
+  },
+  "Stage 3: Status-Aware Semantic": {
+    "Recall@1": 0.7186666666666667,
+    "Recall@5": 0.9653333333333334,
+    "MRR": 0.8252777777777777,
+    "nDCG@5": 0.8570677514693871,
+    "Mean_Latency_ms": 1456.2733318658622,
+    "Median_Latency_ms": 1450.8761999895796
+  },
+  "Stage 4: Full Multi-Factor Retrieval": {
+    "Recall@1": 0.872,
+    "Recall@5": 0.9946666666666667,
+    "MRR": 0.9258888888888889,
+    "nDCG@5": 0.9428029463809718,
+    "Mean_Latency_ms": 1509.7910882666863,
+    "Median_Latency_ms": 1504.9147499958053
+  }
+}

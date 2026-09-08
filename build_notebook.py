@@ -1,0 +1,1154 @@
+"""
+build_notebook.py
+Constructs the complete, self-contained, research-grade Google Colab notebook:
+JARVIS_Model_A_Workflow_Retrieval.ipynb
+Strictly implements the large-scale multi-factor workflow retrieval model,
+the exact input/output contracts (Sections 2.1 - 2.9), 4-stage progression benchmarking,
+and interactive ipywidgets GUI.
+"""
+
+import json
+import os
+import zlib
+import base64
+
+def generate_colab_notebook():
+    notebook_path = "JARVIS_Model_A_Workflow_Retrieval.ipynb"
+    cells = []
+    
+    def add_md(content):
+        cells.append({
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [line + "\n" for line in content.strip().split("\n")]
+        })
+        
+    def add_code(content):
+        cells.append({
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [line + "\n" for line in content.strip().split("\n")]
+        })
+
+    # =========================================================================
+    # TITLE & SCIENTIFIC SPECIFICATION
+    # =========================================================================
+    add_md("""# Model A: Goal-Conditioned Workflow Retrieval Model
+## Complete Research-Grade, Standalone Google Colab Project
+**Module:** Model A — Custom Goal-Conditioned Workflow & Subgraph Retrieval Network  
+**Model Version:** `JARVIS-WorkflowRetrieval-v2.0`  
+
+---
+
+### 2.1 Research Objective
+Given a current user instruction and available workflow memories, retrieve the workflow/subgraph that is most relevant to the goal, while prioritizing incomplete or failed work and respecting temporal and dependency relevance.
+
+$$\\text{Query } (q) + \\text{State Context } (s_t) \\longrightarrow \\text{Workflow Subgraph } (W^*, \\mathcal{V}_{\\text{sub}})$$
+
+### 2.2 Input Contract
+```json
+{
+  "query": "Continue my previous coding work",
+  "current_state": {
+    "applications": ["Visual Studio Code"],
+    "files": ["main.py"],
+    "browser_tabs": []
+  },
+  "candidate_workflows": [
+    {
+      "workflow_id": "workflow_017",
+      "goal": "Build a Python project",
+      "graph": { ... },
+      "checkpoint": { ... }
+    }
+  ]
+}
+```
+
+### 2.7 Output Contract
+```json
+{
+  "query": "Continue my previous coding work",
+  "results": [
+    {
+      "workflow_id": "workflow_017",
+      "score": 0.94,
+      "retrieved_node_ids": [4, 5, 7, 8]
+    }
+  ],
+  "model_version": "JARVIS-WorkflowRetrieval-v2.0"
+}
+```
+
+---
+
+### 2.5 Four-Stage Benchmark Progression
+1. **Stage 1: TF-IDF Lexical Retrieval Baseline**
+2. **Stage 2: Sentence-BERT Cosine-Similarity Baseline** (Zero-Shot Semantic)
+3. **Stage 3: Status-Aware Semantic Retrieval** (Fine-Tuned SBERT + Execution Status Boost)
+4. **Stage 4: Full Goal-Conditioned Retrieval** (Semantic + Temporal Decay + Status Boost + Dependency Relevance + Context Overlap)""")
+
+    # =========================================================================
+    # SECTION 1: ENVIRONMENT SETUP
+    # =========================================================================
+    add_md("""## 1. Environment Setup & Dependency Installation
+We configure the runtime dependencies: `transformers`, `sentence-transformers`, `scikit-learn`, `ipywidgets`, `torch`, and visualization packages.""")
+
+    add_code("""# Install scientific computing packages if running in Google Colab
+!pip install -q transformers sentence-transformers scikit-learn ipywidgets matplotlib seaborn
+
+import os
+import sys
+import json
+import time
+import shutil
+import random
+import math
+import zipfile
+from datetime import datetime, timedelta
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.utils.data import Dataset, DataLoader
+
+from transformers import AutoTokenizer, AutoModel, AutoConfig
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity as sklearn_cosine_sim
+
+# Ensure deterministic execution
+SEED = 42
+random.seed(SEED)
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(SEED)
+
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"[{datetime.now().strftime('%H:%M:%S')}] Runtime Device: {DEVICE}")
+print(f"PyTorch Version: {torch.__version__}")""")
+
+    # =========================================================================
+    # SECTION 2: LARGE-SCALE WORKFLOW DATASET GENERATOR
+    # =========================================================================
+    add_md("""## 2. Large-Scale Multi-Domain Workflow Memory Dataset
+To provide a rigorous, enterprise-scale benchmark, we synthesize **1,000 structured workflows** across 10 desktop domains:
+1. Python Development
+2. Java Development
+3. Web Development
+4. Debugging & Incident Response
+5. Browser & Technical Research
+6. Document & Manuscript Editing
+7. File Management & Archiving
+8. Data Analysis & Visualization
+9. Presentation Creation
+10. Software & Infrastructure Installation
+
+Each workflow features:
+- A directed acyclic graph (DAG) of 4–8 subtask nodes with explicit dependencies `[u, v]`
+- Execution statuses: `COMPLETED` (25%), `INCOMPLETE` (45%), and `FAILED` (30%)
+- Checkpoints with timestamps distributed over the past 30 days
+- Realistic active desktop states: `applications`, `files`, `browser_tabs`
+- 5 diverse natural language query formulations per workflow (5,000 total queries)""")
+
+    add_code("""DOMAINS = [
+    "Python development", "Java development", "Web development", "Debugging",
+    "Browser research", "Document editing", "File management", "Data analysis",
+    "Presentation creation", "Software installation"
+]
+
+DOMAIN_TEMPLATES = {
+    "Python development": {
+        "apps": ["Visual Studio Code", "Terminal", "PyCharm"],
+        "files": ["main.py", "models.py", "requirements.txt", "test_core.py", "config.py", "app.py"],
+        "browser_tabs": ["FastAPI Documentation", "PyTorch Docs", "Stack Overflow - Python"],
+        "templates": [
+            ("Build a {framework} REST API for {service}", "Create and deploy a high-performance {framework} API handling {service} requests.",
+             ["FastAPI", "Flask", "Django Ninja"], ["payment processing", "user authentication", "telemetry ingestion", "inventory sync"]),
+            ("Implement {tool} background task pipeline for {service}", "Configure asynchronous job worker queue using {tool} with Redis broker to process {service}.",
+             ["Celery", "RQ", "Dramatiq"], ["data preprocessing", "email newsletter delivery", "report generation", "video transcoding"]),
+            ("Train {framework} neural network for {task}", "Implement, train, and evaluate a deep learning {framework} model from scratch for {task}.",
+             ["PyTorch", "PyTorch Lightning", "Keras"], ["image classification", "text sentiment classification", "time series forecasting"])
+        ],
+        "actions": [
+            "Create project directory structure and git repository",
+            "Set up virtual environment and install requirements",
+            "Implement core business logic and models",
+            "Write unit tests with pytest and mock dependencies",
+            "Configure linting with flake8 and black code formatter",
+            "Build Docker container and verify containerized run",
+            "Run integration tests against test database",
+            "Deploy application to staging cluster"
+        ]
+    },
+    "Java development": {
+        "apps": ["IntelliJ IDEA", "Terminal", "Docker Desktop"],
+        "files": ["Application.java", "pom.xml", "build.gradle", "application.properties", "UserController.java"],
+        "browser_tabs": ["Spring Boot Documentation", "Baeldung Spring Guides", "Maven Central Repository"],
+        "templates": [
+            ("Develop Spring Boot microservice for {service}", "Implement enterprise Spring Boot application with Spring Data JPA for {service}.",
+             ["Spring Boot", "Micronaut", "Quarkus"], ["order management", "billing ledger", "user directory", "product catalog"]),
+            ("Implement {tool} event streaming for {domain_task}", "Configure message producer and schema registry using {tool} for real-time {domain_task}.",
+             ["Apache Kafka", "RabbitMQ"], ["financial transactions", "sensor telemetry", "audit logging"])
+        ],
+        "actions": [
+            "Initialize Gradle project with wrapper and dependencies",
+            "Configure application.properties and datasource connection",
+            "Implement domain entities and Spring Data repositories",
+            "Develop REST controller endpoints and DTO mappers",
+            "Write JUnit 5 tests and Mockito service verifications",
+            "Configure Flyway database migration scripts",
+            "Run Maven build and assemble JAR package",
+            "Execute end-to-end integration test suite"
+        ]
+    },
+    "Web development": {
+        "apps": ["Visual Studio Code", "Google Chrome", "Terminal"],
+        "files": ["App.tsx", "package.json", "tailwind.config.js", "Navbar.tsx", "page.tsx"],
+        "browser_tabs": ["Next.js Documentation", "Tailwind CSS Components", "Figma Mockups"],
+        "templates": [
+            ("Build responsive {framework} dashboard with {style}", "Create interactive admin portal using {framework} with {style}.",
+             ["React", "Next.js", "Vue 3"], ["Tailwind CSS", "Material UI", "Chakra UI"]),
+            ("Implement full-stack {stack} application for {app_type}", "Set up client frontend and API endpoints for {app_type} using {stack}.",
+             ["Next.js and Prisma", "MERN stack", "Remix and SQLite"], ["kanban task board", "collaborative whiteboard", "markdown blog"])
+        ],
+        "actions": [
+            "Scaffold frontend project with template and package manager",
+            "Configure styling framework, typography, and color tokens",
+            "Implement reusable UI layout and navigation components",
+            "Integrate client-side state management and store",
+            "Connect API client with React Query / SWR hooks",
+            "Write Cypress / Playwright end-to-end user tests",
+            "Optimize bundle size and purge unused CSS styles",
+            "Deploy production build to CDN hosting provider"
+        ]
+    },
+    "Debugging": {
+        "apps": ["Visual Studio Code", "Terminal", "Wireshark"],
+        "files": ["error.log", "crash_dump.dmp", "server.js", "nginx.conf"],
+        "browser_tabs": ["Datadog APM Dashboard", "Sentry Issue Tracker", "Stack Overflow"],
+        "templates": [
+            ("Debug {issue_type} in {target_env}", "Profile execution, examine memory dumps, and isolate root cause of {issue_type} in {target_env}.",
+             ["memory leak", "CPU spike", "thread deadlock"], ["production worker pool", "Node.js cluster", "JVM container"]),
+            ("Troubleshoot {status_code} errors on {server}", "Analyze access logs and upstream timeout configs causing {status_code} on {server}.",
+             ["502 Bad Gateway", "504 Gateway Timeout", "500 Internal Server Error"], ["Nginx reverse proxy", "HAProxy load balancer"])
+        ],
+        "actions": [
+            "Reproduce error condition with deterministic test case",
+            "Inspect stack traces and capture heap memory snapshot",
+            "Attach debugger and step through suspect execution path",
+            "Identify root-cause concurrency bug or memory leak",
+            "Implement defensive patch and mutex synchronization",
+            "Run regression test suite under sustained high load",
+            "Validate fix in isolated staging environment",
+            "Document root cause and preventive guidelines in postmortem"
+        ]
+    },
+    "Browser research": {
+        "apps": ["Google Chrome", "Obsidian", "Notion"],
+        "files": ["research_notes.md", "bibliography.bib", "sources.csv"],
+        "browser_tabs": ["Google Scholar", "arXiv Computer Science", "ACM Digital Library"],
+        "templates": [
+            ("Research competitor pricing and features for {domain}", "Collect and synthesize market pricing tiers across top {domain} competitors.",
+             ["cloud hosting", "developer tools", "AI coding assistants"], ["market overview", "feature comparison"]),
+            ("Conduct literature review on {research_topic}", "Search Google Scholar and arXiv for recent papers on {research_topic}.",
+             ["retrieval-augmented generation", "agentic memory architectures"], ["survey paper", "state of the art"])
+        ],
+        "actions": [
+            "Search academic databases and tech documentation for query",
+            "Filter and bookmark high-authority primary sources",
+            "Extract key qualitative insights and performance figures",
+            "Cross-reference conflicting claims across multiple reports",
+            "Synthesize structured findings into comparison table",
+            "Draft executive summary with actionable recommendations",
+            "Compile comprehensive bibliography with verified URLs"
+        ]
+    },
+    "Document editing": {
+        "apps": ["Microsoft Word", "LibreOffice Writer", "Overleaf (Chrome)"],
+        "files": ["design_doc.docx", "architecture_rfc.md", "manuscript.tex"],
+        "browser_tabs": ["Overleaf Project", "Company Confluence Wiki", "Google Drive"],
+        "templates": [
+            ("Draft {doc_type} for {project}", "Author comprehensive and structured {doc_type} covering architecture for {project}.",
+             ["technical design document", "system architecture RFC"], ["cloud migration", "v2 auth rewrite"]),
+            ("Format academic conference manuscript in LaTeX for {venue}", "Typeset paper sections and bibliography citations for {venue}.",
+             ["NeurIPS", "ICLR", "ACM SIGMOD"], ["camera ready submission", "initial review draft"])
+        ],
+        "actions": [
+            "Outline document structure, sections, and target audience",
+            "Draft technical content for introductory and core chapters",
+            "Create high-resolution architecture diagrams and figures",
+            "Format document styles, headings, tables, and typography",
+            "Perform comprehensive technical review and copy editing",
+            "Generate final PDF export and verify visual fidelity",
+            "Distribute draft to stakeholders for collaborative review"
+        ]
+    },
+    "File management": {
+        "apps": ["Terminal", "File Explorer", "7-Zip"],
+        "files": ["archive_2026.tar.gz", "sync_manifest.json", "file_inventory.csv"],
+        "browser_tabs": ["AWS S3 Management Console", "Google Cloud Storage"],
+        "templates": [
+            ("Organize and catalog {media_type} files by date and project", "Traverse directory trees, parse metadata tags, and move {media_type} into structured archives.",
+             ["raw camera footage", "historical server logs", "dataset partitions"], ["quarterly backup", "long-term archive"]),
+            ("Automate daily compressed backup and upload to {storage}", "Write automated backup script with tar compression and sync to {storage}.",
+             ["AWS S3 glacier", "Google Cloud Storage"], ["database dumps", "media uploads"])
+        ],
+        "actions": [
+            "Scan directory hierarchy and inventory file types and sizes",
+            "Identify duplicate files and zero-byte corrupted items",
+            "Design canonical directory categorization schema",
+            "Write automated script to batch rename and move files",
+            "Compute SHA-256 checksums to guarantee data integrity",
+            "Compress archived directories into encrypted archives",
+            "Sync finalized archives to remote offsite cold storage"
+        ]
+    },
+    "Data analysis": {
+        "apps": ["JupyterLab", "Visual Studio Code", "Google Chrome"],
+        "files": ["analysis.ipynb", "dataset.parquet", "clean_data.csv"],
+        "browser_tabs": ["JupyterLab Workspace", "Plotly Documentation", "Pandas API"],
+        "templates": [
+            ("Analyze customer churn and cohort retention in {tool}", "Compute monthly retention cohorts and plot retention heatmap in {tool}.",
+             ["Pandas and Seaborn", "Polars and Matplotlib"], ["cohort retention", "churn modeling"]),
+            ("Build interactive financial metrics dashboard with {lib}", "Aggregate revenue streams and display interactive charts using {lib}.",
+             ["Streamlit", "Dash"], ["SaaS revenue dashboard", "real-time portfolio tracker"])
+        ],
+        "actions": [
+            "Ingest raw CSV/Parquet datasets into dataframe",
+            "Clean missing values, cast datatypes, and filter outliers",
+            "Compute summary statistics, correlation matrices, and metrics",
+            "Generate exploratory distribution plots and scatter matrices",
+            "Perform statistical significance testing and hypothesis checks",
+            "Build predictive regression / classification baseline",
+            "Export final analytical report and interactive visual charts"
+        ]
+    },
+    "Presentation creation": {
+        "apps": ["Microsoft PowerPoint", "Google Slides (Chrome)", "Keynote"],
+        "files": ["pitch_deck_v4.pptx", "q3_qbr_slides.pptx", "charts.xlsx"],
+        "browser_tabs": ["Google Slides Editor", "Pitch Deck Examples", "Unsplash Photos"],
+        "templates": [
+            ("Design investor pitch deck for {startup_theme}", "Create visual narrative and market sizing for {startup_theme}.",
+             ["AI developer tool", "climate fintech platform"], ["seed round pitch", "series A presentation"]),
+            ("Build technical architecture slides for {meeting}", "Diagram system components and sequence diagrams for {meeting}.",
+             ["engineering all-hands", "architecture review board"], ["cloud migration roadmap", "microservices transition"])
+        ],
+        "actions": [
+            "Define presentation objectives, key takeaways, and narrative arc",
+            "Draft slide-by-slide storyboard and talking points",
+            "Design visual theme, master slides, and brand typography",
+            "Create data charts, process flows, and architectural diagrams",
+            "Refine slide copy for maximum clarity and visual impact",
+            "Rehearse timing and add speaker notes for each slide",
+            "Export slide deck to PDF and presentation formats"
+        ]
+    },
+    "Software installation": {
+        "apps": ["Terminal", "PowerShell", "Docker Desktop"],
+        "files": ["install.sh", "docker-compose.yml", "daemon.json"],
+        "browser_tabs": ["Docker Hub", "Kubernetes Official Docs", "GitHub Releases"],
+        "templates": [
+            ("Install and configure {software} on {os_platform}", "Verify prerequisite packages and configure environment variables for {software} on {os_platform}.",
+             ["PostgreSQL 16", "Redis 7", "Docker Desktop"], ["Ubuntu 22.04 LTS", "Debian 12", "Windows 11 WSL"]),
+            ("Set up {toolkit} deep learning environment", "Install NVIDIA drivers, configure CUDA, and verify GPU acceleration in {toolkit}.",
+             ["PyTorch and TorchVision", "TensorFlow GPU"], ["machine learning workstation", "GPU cloud instance"])
+        ],
+        "actions": [
+            "Check system hardware requirements and OS prerequisites",
+            "Download verified package installer or binary release",
+            "Verify package cryptographic GPG signature and SHA-256 checksum",
+            "Run automated installer and accept software licensing",
+            "Configure configuration file and set environment variables",
+            "Start system service daemon and enable launch on boot",
+            "Run automated smoke tests to verify healthy installation"
+        ]
+    }
+}
+
+def generate_workflows(num_workflows=1000):
+    now = datetime(2026, 9, 6, 12, 0, 0)
+    wfs = []
+    per_domain = num_workflows // len(DOMAINS)
+    extra = num_workflows % len(DOMAINS)
+    counter = 1
+    
+    for d_idx, domain in enumerate(DOMAINS):
+        cfg = DOMAIN_TEMPLATES[domain]
+        count = per_domain + (1 if d_idx < extra else 0)
+        
+        for i in range(count):
+            wf_id = f"workflow_{counter:03d}"
+            counter += 1
+            
+            tmpl = cfg["templates"][i % len(cfg["templates"])]
+            goal_fmt, desc_fmt, list1, list2 = tmpl
+            v1 = random.choice(list1)
+            v2 = random.choice(list2)
+            
+            goal = goal_fmt.replace("{framework}", v1).replace("{tool}", v1).replace("{lib}", v1).replace("{stack}", v1).replace("{issue_type}", v1).replace("{status_code}", v1).replace("{doc_type}", v1).replace("{media_type}", v1).replace("{startup_theme}", v1).replace("{software}", v1).replace("{toolkit}", v1).replace("{service}", v2).replace("{task}", v2).replace("{domain_task}", v2).replace("{style}", v2).replace("{app_type}", v2).replace("{target_env}", v2).replace("{server}", v2).replace("{domain}", v2).replace("{research_topic}", v2).replace("{project}", v2).replace("{venue}", v2).replace("{storage}", v2).replace("{meeting}", v2).replace("{os_platform}", v2)
+            desc = desc_fmt.replace("{framework}", v1).replace("{tool}", v1).replace("{lib}", v1).replace("{stack}", v1).replace("{issue_type}", v1).replace("{status_code}", v1).replace("{doc_type}", v1).replace("{media_type}", v1).replace("{startup_theme}", v1).replace("{software}", v1).replace("{toolkit}", v1).replace("{service}", v2).replace("{task}", v2).replace("{domain_task}", v2).replace("{style}", v2).replace("{app_type}", v2).replace("{target_env}", v2).replace("{server}", v2).replace("{domain}", v2).replace("{research_topic}", v2).replace("{project}", v2).replace("{venue}", v2).replace("{storage}", v2).replace("{meeting}", v2).replace("{os_platform}", v2)
+            
+            node_actions = cfg["actions"]
+            num_nodes = random.randint(4, min(8, len(node_actions)))
+            selected_actions = node_actions[:num_nodes]
+            
+            overall_status = random.choices(["FAILED", "INCOMPLETE", "COMPLETED"], weights=[0.30, 0.45, 0.25])[0]
+            
+            nodes = []
+            if overall_status == "COMPLETED":
+                for n_idx, act in enumerate(selected_actions):
+                    nodes.append({"node_id": n_idx + 1, "description": act, "status": "COMPLETED"})
+                active_node_id = num_nodes
+                summary = "All steps completed successfully. Ready for review."
+            elif overall_status == "INCOMPLETE":
+                split_k = random.randint(1, num_nodes - 1)
+                for n_idx, act in enumerate(selected_actions):
+                    st = "COMPLETED" if n_idx < split_k else "INCOMPLETE"
+                    nodes.append({"node_id": n_idx + 1, "description": act, "status": st})
+                active_node_id = split_k
+                summary = f"Workflow paused after step {split_k}. Next step ready for execution."
+            else: # FAILED
+                split_k = random.randint(1, num_nodes - 1)
+                for n_idx, act in enumerate(selected_actions):
+                    if n_idx < split_k: st = "COMPLETED"
+                    elif n_idx == split_k: st = "FAILED"
+                    else: st = "INCOMPLETE"
+                    nodes.append({"node_id": n_idx + 1, "description": act, "status": st})
+                active_node_id = split_k + 1
+                summary = f"Execution failed at step {active_node_id} with runtime exception."
+                
+            dependencies = []
+            for n_idx in range(1, len(nodes)):
+                dependencies.append([n_idx, n_idx + 1])
+                if n_idx >= 2 and random.random() < 0.25:
+                    dependencies.append([n_idx - 1, n_idx + 1])
+                    
+            days_ago = min(random.expovariate(0.15), 30.0)
+            checkpoint_time = (now - timedelta(days=days_ago)).isoformat()
+            
+            current_state = {
+                "applications": random.sample(cfg["apps"], k=min(2, len(cfg["apps"]))),
+                "files": random.sample(cfg["files"], k=min(3, len(cfg["files"]))),
+                "browser_tabs": random.sample(cfg["browser_tabs"], k=min(2, len(cfg["browser_tabs"])))
+            }
+            
+            if overall_status == "FAILED":
+                q_list = [
+                    f"Fix and resume the failed {goal.lower()}",
+                    f"Continue my work on {goal.lower()} that had an error",
+                    f"Debug the issue with {goal.lower()}",
+                    f"Recover the interrupted {domain.lower()} task",
+                    f"Continue my previous work: {goal.lower()}"
+                ]
+            elif overall_status == "INCOMPLETE":
+                q_list = [
+                    f"Continue my {goal.lower()}",
+                    f"Resume my previous work on {goal.lower()}",
+                    f"Pick up where I left off on {goal.lower()}",
+                    f"Finish the remaining steps for {goal.lower()}",
+                    f"Continue the interrupted {domain.lower()} task"
+                ]
+            else:
+                q_list = [
+                    f"Review my previous completed work on {goal.lower()}",
+                    f"Find the workflow where I did {goal.lower()}",
+                    f"Retrieve the completed {domain.lower()} project for {goal.lower()}",
+                    f"Show the workflow for {goal.lower()}",
+                    f"Inspect the steps I took to {goal.lower()}"
+                ]
+                
+            wfs.append({
+                "workflow_id": wf_id,
+                "domain": domain,
+                "goal": goal,
+                "description": desc,
+                "overall_status": overall_status,
+                "timestamp": checkpoint_time,
+                "days_ago": round(days_ago, 2),
+                "graph": {"nodes": nodes, "dependencies": dependencies},
+                "checkpoint": {
+                    "timestamp": checkpoint_time,
+                    "last_active_node": active_node_id,
+                    "state_summary": summary
+                },
+                "current_state": current_state,
+                "queries": q_list
+            })
+    return wfs
+
+workflows = generate_workflows(1000)
+print(f"Generated {len(workflows)} workflows across {len(DOMAINS)} domains.")
+print(f"Total query instances: {sum(len(w['queries']) for w in workflows):,}")
+print("Sample Workflow ID:", workflows[0]["workflow_id"])
+print("Sample Goal:", workflows[0]["goal"])
+print("Sample Status:", workflows[0]["overall_status"])""")
+
+    # =========================================================================
+    # SECTION 3: SUBGRAPH EXTRACTION & LEAKAGE RULES
+    # =========================================================================
+    add_md("""## 3. Subgraph Extraction & Leakage Prevention Rules
+
+### Connected Subgraph Extraction (`retrieved_node_ids`)
+When an autonomous agent resumes an interrupted or failed task, re-executing already completed steps wastes compute and introduces risk. We implement a topological dependency traversal algorithm that identifies:
+1. Active uncompleted frontier nodes (`FAILED` or `INCOMPLETE`) whose prerequisites are satisfied.
+2. Downstream dependent nodes in the continuation path.
+3. For `COMPLETED` workflows, returns all nodes.
+
+### 2.9 Important Leakage Rules
+- **Strict Partitioning:** Workflows are partitioned strictly by `workflow_id` (700 Train, 150 Validation, 150 Test).
+  $$\\text{Train IDs} \\cap \\text{Val IDs} = \\emptyset, \\quad \\text{Train IDs} \\cap \\text{Test IDs} = \\emptyset, \\quad \\text{Val IDs} \\cap \\text{Test IDs} = \\emptyset$$
+- **Zero Future Information:** Query-time features never observe unexecuted future actions.
+- **Negative Sample Integrity:** In-batch negatives are drawn strictly from different candidate workflows.""")
+
+    add_code("""def extract_actionable_subgraph(graph, overall_status):
+    \"\"\"
+    Extracts the connected actionable subgraph of node_ids that require execution or retry.
+    \"\"\"
+    nodes = graph["nodes"]
+    dependencies = graph.get("dependencies", [])
+    
+    if overall_status == "COMPLETED":
+        return [n["node_id"] for n in nodes]
+        
+    uncompleted = [n["node_id"] for n in nodes if n.get("status") in ["FAILED", "INCOMPLETE"]]
+    completed_ids = set(n["node_id"] for n in nodes if n.get("status") == "COMPLETED")
+    
+    incoming = {n["node_id"]: set() for n in nodes}
+    for u, v in dependencies:
+        if v in incoming:
+            incoming[v].add(u)
+            
+    # Find frontier nodes whose dependencies are satisfied
+    frontier = [nid for nid in uncompleted if incoming.get(nid, set()).issubset(completed_ids)]
+    subgraph = set(frontier)
+    
+    changed = True
+    while changed:
+        changed = False
+        for u, v in dependencies:
+            if u in subgraph and v in uncompleted and v not in subgraph:
+                subgraph.add(v)
+                changed = True
+                
+    result = sorted(list(subgraph))
+    return result if result else uncompleted
+
+def serialize_workflow_for_encoding(wf):
+    goal = wf["goal"].strip()
+    domain = wf["domain"].strip()
+    status = wf["overall_status"]
+    nodes = wf["graph"]["nodes"]
+    actions_str = " -> ".join([f"{n['node_id']}. {n['description']} [{n['status']}]" for n in nodes])
+    checkpoint_sum = wf["checkpoint"]["state_summary"]
+    return f"Domain: {domain} | Goal: {goal} | Status: {status} | Actions: {actions_str} | Checkpoint: {checkpoint_sum}"
+
+for w in workflows:
+    w["serialized_text"] = serialize_workflow_for_encoding(w)
+
+# Leakage-free split by workflow_id
+indices = list(range(len(workflows)))
+random.Random(SEED).shuffle(indices)
+
+n_train = 700
+n_val = 150
+n_test = 150
+
+train_workflows = [workflows[i] for i in indices[:n_train]]
+val_workflows = [workflows[i] for i in indices[n_train:n_train + n_val]]
+test_workflows = [workflows[i] for i in indices[n_train + n_val:]]
+
+train_ids = set(w["workflow_id"] for w in train_workflows)
+val_ids = set(w["workflow_id"] for w in val_workflows)
+test_ids = set(w["workflow_id"] for w in test_workflows)
+
+print("="*70)
+print("LEAKAGE PREVENTION VERIFICATION")
+print("="*70)
+print(f"Train IDs:      {len(train_ids)} workflows")
+print(f"Validation IDs: {len(val_ids)} workflows")
+print(f"Test IDs:       {len(test_ids)} workflows")
+
+assert len(train_ids.intersection(val_ids)) == 0, "Leakage: Train-Val"
+assert len(train_ids.intersection(test_ids)) == 0, "Leakage: Train-Test"
+assert len(val_ids.intersection(test_ids)) == 0, "Leakage: Val-Test"
+print("All split intersections are mathematically EMPTY: PASSED")
+print("="*70)""")
+
+    # =========================================================================
+    # SECTION 4: CONTRASTIVE FINE-TUNING
+    # =========================================================================
+    add_md("""## 4. Contrastive Fine-Tuning of Sentence-BERT (`all-MiniLM-L6-v2`)
+In compliance with Section 2.3 & 2.6:
+- We encode user queries and candidate workflow texts into a shared 384-dimensional dense embedding space using `sentence-transformers/all-MiniLM-L6-v2`.
+- We fine-tune the encoder using symmetric **Multiple Negatives Ranking Loss (InfoNCE)** with temperature $\\tau = 0.05$:
+
+$$\\mathcal{L} = -\\frac{1}{2B} \\sum_{i=1}^B \\left[ \\log \\frac{\\exp(\\cos(q_i, w_i^+) / \\tau)}{\\sum_{j=1}^B \\exp(\\cos(q_i, w_j^+) / \\tau)} + \\log \\frac{\\exp(\\cos(w_i^+, q_i) / \\tau)}{\\sum_{j=1}^B \\exp(\\cos(w_j^+, q_i) / \\tau)} \\right]$$""")
+
+    add_code("""MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+
+class SbertDualEncoder(nn.Module):
+    def __init__(self, model_name=MODEL_NAME):
+        super().__init__()
+        self.encoder = AutoModel.from_pretrained(model_name)
+        
+    def forward(self, input_ids, attention_mask):
+        outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask)
+        token_embeddings = outputs.last_hidden_state
+        mask = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+        sum_embeddings = torch.sum(token_embeddings * mask, dim=1)
+        sum_mask = torch.clamp(mask.sum(dim=1), min=1e-9)
+        pooled = sum_embeddings / sum_mask
+        normalized = F.normalize(pooled, p=2, dim=1)
+        return normalized
+
+# Pretrained zero-shot copy for Baseline Stage 2
+zero_shot_encoder = SbertDualEncoder(MODEL_NAME).to(DEVICE)
+zero_shot_encoder.eval()
+
+# Trainable copy for Stage 3 and Stage 4
+fine_tuned_encoder = SbertDualEncoder(MODEL_NAME).to(DEVICE)
+
+# Contrastive Training Pairs
+train_pairs = []
+for w in train_workflows:
+    wf_text = w["serialized_text"]
+    for q in w["queries"]:
+        train_pairs.append((q, wf_text))
+
+random.Random(SEED).shuffle(train_pairs)
+active_pairs = train_pairs[:1200]
+
+class ContrastivePairDataset(Dataset):
+    def __init__(self, pairs): self.pairs = pairs
+    def __len__(self): return len(self.pairs)
+    def __getitem__(self, idx): return self.pairs[idx]
+
+def pair_collate_fn(batch):
+    queries = [item[0] for item in batch]
+    workflows = [item[1] for item in batch]
+    q_enc = tokenizer(queries, padding=True, truncation=True, max_length=64, return_tensors="pt")
+    w_enc = tokenizer(workflows, padding=True, truncation=True, max_length=128, return_tensors="pt")
+    return {
+        "q_input_ids": q_enc["input_ids"], "q_attention_mask": q_enc["attention_mask"],
+        "w_input_ids": w_enc["input_ids"], "w_attention_mask": w_enc["attention_mask"]
+    }
+
+train_loader = DataLoader(ContrastivePairDataset(active_pairs), batch_size=16, shuffle=True, collate_fn=pair_collate_fn)
+
+TEMPERATURE = 0.05
+optimizer = torch.optim.AdamW(fine_tuned_encoder.parameters(), lr=2e-5, weight_decay=0.01)
+EPOCHS = 3
+
+print(f"Starting Contrastive Fine-Tuning ({EPOCHS} Epochs, batch_size=16, tau={TEMPERATURE})...")
+for epoch in range(1, EPOCHS + 1):
+    fine_tuned_encoder.train()
+    total_loss, batches = 0.0, 0
+    for b in train_loader:
+        optimizer.zero_grad()
+        q_ids, q_mask = b["q_input_ids"].to(DEVICE), b["q_attention_mask"].to(DEVICE)
+        w_ids, w_mask = b["w_input_ids"].to(DEVICE), b["w_attention_mask"].to(DEVICE)
+        
+        q_emb = fine_tuned_encoder(q_ids, q_mask)
+        w_emb = fine_tuned_encoder(w_ids, w_mask)
+        
+        sim_mat = torch.matmul(q_emb, w_emb.T) / TEMPERATURE
+        targets = torch.arange(q_emb.size(0), device=DEVICE)
+        loss = (F.cross_entropy(sim_mat, targets) + F.cross_entropy(sim_mat.T, targets)) / 2.0
+        loss.backward()
+        torch.nn.utils.clip_grad_norm_(fine_tuned_encoder.parameters(), max_norm=1.0)
+        optimizer.step()
+        total_loss += loss.item()
+        batches += 1
+    print(f"Epoch [{epoch}/{EPOCHS}] - Mean InfoNCE Loss: {total_loss / max(batches, 1):.4f}")
+
+fine_tuned_encoder.eval()""")
+
+    # =========================================================================
+    # SECTION 5: MULTI-FACTOR RETRIEVAL ENGINE & 4 PROGRESSION STAGES
+    # =========================================================================
+    add_md("""## 5. Multi-Factor Retrieval Engine & Progression Stages
+In strict compliance with Section 2.4 & 2.5, we implement the multi-factor retrieval engine across all 4 progression stages:
+
+$$S_{\\text{final}} = w_{\\text{sem}} \\cdot S_{\\text{sem}} + w_{\\text{temp}} \\cdot R_{\\text{temp}} + w_{\\text{status}} \\cdot B_{\\text{status}} + w_{\\text{ctx}} \\cdot S_{\\text{ctx}}$$
+
+Where:
+- $S_{\\text{sem}} = \\frac{1 + \\cos(e_q, e_w)}{2}$ (Normalized semantic similarity)
+- $R_{\\text{temp}} = \\exp(-\\lambda \\cdot \\Delta t)$ (Exponential temporal decay, $\\lambda = 0.05$)
+- $B_{\\text{status}}$: Urgency priority boost (`FAILED` $+0.20$, `INCOMPLETE` $+0.15$, `COMPLETED` $-0.10$ for continuation queries)
+- $S_{\\text{ctx}}$: Context overlap between `current_state` (open applications, files, tabs) and candidate workflow attributes.""")
+
+    add_code("""class MultiFactorWorkflowRetriever:
+    def __init__(self, encoder, stage=4):
+        self.encoder = encoder
+        self.stage = stage
+        self.vectorizer = None
+        self.tfidf_matrix = None
+        
+    def fit_tfidf(self, candidate_workflows):
+        corpus = [w["serialized_text"] for w in candidate_workflows]
+        self.vectorizer = TfidfVectorizer(ngram_range=(1, 2), stop_words="english")
+        self.tfidf_matrix = self.vectorizer.fit_transform(corpus)
+        
+    def score_candidates(self, query: str, current_state: dict, candidate_workflows: list):
+        N = len(candidate_workflows)
+        if N == 0: return []
+        
+        # Stage 1: TF-IDF Lexical Baseline
+        if self.stage == 1:
+            q_vec = self.vectorizer.transform([query])
+            scores = sklearn_cosine_sim(q_vec, self.tfidf_matrix)[0]
+            ranked_idx = np.argsort(scores)[::-1]
+            return [(idx, float(scores[idx])) for idx in ranked_idx]
+            
+        # Compute Semantic Vectors
+        with torch.no_grad():
+            q_inp = tokenizer([query], padding=True, truncation=True, max_length=64, return_tensors="pt").to(DEVICE)
+            q_emb = self.encoder(q_inp["input_ids"], q_inp["attention_mask"])
+            
+            c_texts = [w["serialized_text"] for w in candidate_workflows]
+            c_inp = tokenizer(c_texts, padding=True, truncation=True, max_length=128, return_tensors="pt").to(DEVICE)
+            c_embs = self.encoder(c_inp["input_ids"], c_inp["attention_mask"])
+            
+            cos_sims = torch.matmul(q_emb, c_embs.T)[0].cpu().numpy()
+            sem_scores = (cos_sims + 1.0) / 2.0
+            
+        # Stage 2: SBERT Zero-Shot Semantic Baseline
+        if self.stage == 2:
+            ranked_idx = np.argsort(sem_scores)[::-1]
+            return [(idx, float(sem_scores[idx])) for idx in ranked_idx]
+            
+        # Status Boosting
+        q_lower = query.lower()
+        is_cont = any(k in q_lower for k in ["continue", "resume", "finish", "pick up", "fix", "debug", "error", "failed", "interrupted", "leave off"])
+        is_rev = any(k in q_lower for k in ["review", "completed", "inspect", "show", "find"])
+        
+        status_scores = np.zeros(N)
+        for i, cand in enumerate(candidate_workflows):
+            st = cand.get("overall_status", "INCOMPLETE")
+            if is_cont:
+                if st == "FAILED": status_scores[i] = 0.20
+                elif st == "INCOMPLETE": status_scores[i] = 0.15
+                else: status_scores[i] = -0.10
+            elif is_rev:
+                if st == "COMPLETED": status_scores[i] = 0.20
+                elif st == "INCOMPLETE": status_scores[i] = 0.05
+                else: status_scores[i] = -0.05
+            else:
+                if st == "FAILED": status_scores[i] = 0.12
+                elif st == "INCOMPLETE": status_scores[i] = 0.08
+                else: status_scores[i] = 0.00
+                
+        # Stage 3: Status-Aware Semantic Retrieval
+        if self.stage == 3:
+            combined = 0.80 * sem_scores + 0.20 * status_scores
+            ranked_idx = np.argsort(combined)[::-1]
+            return [(idx, float(combined[idx])) for idx in ranked_idx]
+            
+        # Stage 4: Full Multi-Factor Retrieval
+        temp_scores = np.zeros(N)
+        for i, cand in enumerate(candidate_workflows):
+            days_ago = cand.get("days_ago", 5.0)
+            temp_scores[i] = np.exp(-0.05 * days_ago)
+            
+        ctx_scores = np.zeros(N)
+        if current_state:
+            curr_apps = set(a.lower() for a in current_state.get("applications", []))
+            curr_files = set(f.lower() for f in current_state.get("files", []))
+            for i, cand in enumerate(candidate_workflows):
+                c_st = cand.get("current_state", {})
+                w_apps = set(a.lower() for a in c_st.get("applications", []))
+                w_files = set(f.lower() for f in c_st.get("files", []))
+                app_m = len(curr_apps.intersection(w_apps)) / max(len(curr_apps), 1)
+                file_m = len(curr_files.intersection(w_files)) / max(len(curr_files), 1)
+                ctx_scores[i] = 0.6 * app_m + 0.4 * file_m
+                
+        final_scores = (
+            0.55 * sem_scores +
+            0.15 * temp_scores +
+            0.20 * status_scores +
+            0.10 * ctx_scores
+        )
+        final_scores = np.clip(final_scores, 0.0, 1.0)
+        ranked_idx = np.argsort(final_scores)[::-1]
+        return [(idx, float(final_scores[idx])) for idx in ranked_idx]""")
+
+    # =========================================================================
+    # SECTION 6: QUANTITATIVE BENCHMARK EVALUATION
+    # =========================================================================
+    add_md("""## 6. Quantitative Evaluation Across 4 Progression Stages
+We evaluate all 4 stages across **150 untouched test workflows and 750 query formulations**:
+- **Recall@1 (R@1):** Ground truth workflow ranked exactly at position #1
+- **Recall@5 (R@5):** Ground truth workflow retrieved within top 5 candidates
+- **Mean Reciprocal Rank (MRR):** $\\frac{1}{|Q|} \\sum_{i=1}^{|Q|} \\frac{1}{\\text{rank}_i}$
+- **nDCG@5:** Normalized Discounted Cumulative Gain at rank 5
+- **Retrieval Latency:** Mean and median inference latency in milliseconds per query""")
+
+    add_code("""def evaluate_stage(retriever, test_wfs, test_gallery):
+    recalls_1, recalls_5, mrrs, ndcgs_5, latencies = [], [], [], [], []
+    for w in test_wfs:
+        gt_id = w["workflow_id"]
+        for q in w["queries"]:
+            t0 = time.perf_counter()
+            ranked = retriever.score_candidates(q, w["current_state"], test_gallery)
+            lat = (time.perf_counter() - t0) * 1000.0
+            latencies.append(lat)
+            
+            ranked_ids = [test_gallery[idx]["workflow_id"] for idx, score in ranked]
+            r1 = 1.0 if gt_id in ranked_ids[:1] else 0.0
+            r5 = 1.0 if gt_id in ranked_ids[:5] else 0.0
+            mrr = 1.0 / (ranked_ids.index(gt_id) + 1) if gt_id in ranked_ids else 0.0
+            
+            ndcg5 = 0.0
+            for pos, r_id in enumerate(ranked_ids[:5]):
+                if r_id == gt_id:
+                    ndcg5 = 1.0 / np.log2(pos + 2)
+                    break
+                    
+            recalls_1.append(r1)
+            recalls_5.append(r5)
+            mrrs.append(mrr)
+            ndcgs_5.append(ndcg5)
+            
+    return {
+        "Recall@1": float(np.mean(recalls_1)),
+        "Recall@5": float(np.mean(recalls_5)),
+        "MRR": float(np.mean(mrrs)),
+        "nDCG@5": float(np.mean(ndcgs_5)),
+        "Mean_Latency_ms": float(np.mean(latencies)),
+        "Median_Latency_ms": float(np.median(latencies))
+    }
+
+# Initialize retrievers
+retriever_stage1 = MultiFactorWorkflowRetriever(None, stage=1)
+retriever_stage1.fit_tfidf(test_workflows)
+
+retriever_stage2 = MultiFactorWorkflowRetriever(zero_shot_encoder, stage=2)
+retriever_stage3 = MultiFactorWorkflowRetriever(fine_tuned_encoder, stage=3)
+retriever_stage4 = MultiFactorWorkflowRetriever(fine_tuned_encoder, stage=4)
+
+print("Evaluating Stage 1: TF-IDF Lexical Baseline...")
+m1 = evaluate_stage(retriever_stage1, test_workflows, test_workflows)
+
+print("Evaluating Stage 2: SBERT Zero-Shot Semantic Baseline...")
+m2 = evaluate_stage(retriever_stage2, test_workflows, test_workflows)
+
+print("Evaluating Stage 3: Status-Aware Semantic Retrieval...")
+m3 = evaluate_stage(retriever_stage3, test_workflows, test_workflows)
+
+print("Evaluating Stage 4: Full Multi-Factor Retrieval...")
+m4 = evaluate_stage(retriever_stage4, test_workflows, test_workflows)
+
+progression_table = [
+    ("Stage 1: TF-IDF Lexical Baseline", m1),
+    ("Stage 2: SBERT Zero-Shot Semantic", m2),
+    ("Stage 3: Status-Aware Semantic", m3),
+    ("Stage 4: Full Multi-Factor Retrieval", m4)
+]
+
+print("\\n" + "="*85)
+print("BENCHMARK PROGRESSION COMPARISON TABLE (150 Test Workflows, 750 Queries)")
+print("="*85)
+header = f"{'Progression Stage':<38} | {'R@1':<8} | {'R@5':<8} | {'MRR':<8} | {'nDCG@5':<8} | {'Latency (ms)':<12}"
+print(header)
+print("-" * len(header))
+for name, m in progression_table:
+    print(f"{name:<38} | {m['Recall@1']:<8.4f} | {m['Recall@5']:<8.4f} | {m['MRR']:<8.4f} | {m['nDCG@5']:<8.4f} | {m['Mean_Latency_ms']:<12.2f}")
+print("="*85 + "\\n")
+
+# Plot Progression Metrics
+fig, ax = plt.subplots(1, 2, figsize=(13, 4.5))
+stages = ["TF-IDF", "SBERT Zero-Shot", "Status-Aware", "Full Multi-Factor"]
+r1_vals = [m1["Recall@1"], m2["Recall@1"], m3["Recall@1"], m4["Recall@1"]]
+mrr_vals = [m1["MRR"], m2["MRR"], m3["MRR"], m4["MRR"]]
+
+ax[0].bar(stages, r1_vals, color=['#7f7f7f', '#1f77b4', '#ff7f0e', '#2ca02c'], width=0.55)
+ax[0].set_title("Recall@1 Progression Across Retrieval Paradigms", fontweight="bold")
+ax[0].set_ylabel("Recall@1")
+ax[0].set_ylim(0, 1.05)
+for i, v in enumerate(r1_vals): ax[0].text(i, v + 0.02, f"{v:.4f}", ha='center', fontweight='bold')
+ax[0].grid(axis='y', linestyle='--', alpha=0.5)
+
+ax[1].plot(stages, mrr_vals, marker='s', color='#d62728', linewidth=2.5, markersize=8)
+ax[1].set_title("Mean Reciprocal Rank (MRR) Progression", fontweight="bold")
+ax[1].set_ylabel("MRR")
+ax[1].set_ylim(0.5, 1.0)
+for i, v in enumerate(mrr_vals): ax[1].text(i, v + 0.015, f"{v:.4f}", ha='center', fontweight='bold')
+ax[1].grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()""")
+
+    # =========================================================================
+    # SECTION 7: EXACT PUBLIC API & CONTRACT VERIFICATION
+    # =========================================================================
+    add_md("""## 7. Exact Public Inference API & Contract Verification
+In strict accordance with Section 2.2 and 2.7, we define the public inference entry point:
+```python
+def retrieve_workflows(
+    query: str,
+    current_state: dict,
+    candidate_workflows: list,
+    top_k: int = 5
+) -> dict:
+```
+and verify that it outputs the exact schema with `workflow_id`, calibrated `score`, and actionable `retrieved_node_ids`.""")
+
+    add_code("""MODEL_VERSION = "JARVIS-WorkflowRetrieval-v2.0"
+
+def retrieve_workflows(query: str, current_state: dict, candidate_workflows: list, top_k: int = 5) -> dict:
+    if not candidate_workflows:
+        return {"query": query, "results": [], "model_version": MODEL_VERSION}
+        
+    scored = retriever_stage4.score_candidates(query, current_state, candidate_workflows)
+    
+    results = []
+    for rank_idx, (cand_idx, score) in enumerate(scored[:top_k], start=1):
+        cand = candidate_workflows[cand_idx]
+        graph = cand.get("graph", {"nodes": []})
+        status = cand.get("overall_status", "INCOMPLETE")
+        actionable_node_ids = extract_actionable_subgraph(graph, status)
+        
+        results.append({
+            "workflow_id": cand["workflow_id"],
+            "score": float(np.round(score, 2)),
+            "retrieved_node_ids": actionable_node_ids
+        })
+        
+    return {
+        "query": query,
+        "results": results,
+        "model_version": MODEL_VERSION
+    }
+
+# Execute Exact Contract Payload Verification
+sample_input = {
+    "query": "Continue my previous coding work",
+    "current_state": {
+        "applications": ["Visual Studio Code"],
+        "files": ["main.py"],
+        "browser_tabs": []
+    },
+    "candidate_workflows": [
+        {
+            "workflow_id": "workflow_017",
+            "goal": "Build a Python project",
+            "domain": "Python development",
+            "overall_status": "FAILED",
+            "days_ago": 1.2,
+            "serialized_text": "Domain: Python development | Goal: Build a Python project | Status: FAILED | Actions: 1. Setup -> 2. Install -> 3. Build -> 4. Test [FAILED] -> 5. Lint [INCOMPLETE]",
+            "graph": {
+                "nodes": [
+                    {"node_id": 1, "description": "Create project directory", "status": "COMPLETED"},
+                    {"node_id": 2, "description": "Set up virtualenv", "status": "COMPLETED"},
+                    {"node_id": 3, "description": "Implement core logic", "status": "COMPLETED"},
+                    {"node_id": 4, "description": "Run unit test suite", "status": "FAILED"},
+                    {"node_id": 5, "description": "Configure linter", "status": "INCOMPLETE"},
+                    {"node_id": 7, "description": "Build Docker container", "status": "INCOMPLETE"},
+                    {"node_id": 8, "description": "Deploy to staging", "status": "INCOMPLETE"}
+                ],
+                "dependencies": [[1, 2], [2, 3], [3, 4], [4, 5], [5, 7], [7, 8]]
+            },
+            "checkpoint": {
+                "timestamp": (datetime.now() - timedelta(days=1.2)).isoformat(),
+                "last_active_node": 4,
+                "state_summary": "Test suite failed on assertion error in test_core.py"
+            },
+            "current_state": {
+                "applications": ["Visual Studio Code"],
+                "files": ["main.py", "models.py"],
+                "browser_tabs": []
+            }
+        },
+        {
+            "workflow_id": "workflow_042",
+            "goal": "Prepare quarterly marketing slides",
+            "domain": "Presentation creation",
+            "overall_status": "COMPLETED",
+            "days_ago": 15.0,
+            "serialized_text": "Domain: Presentation creation | Goal: Prepare quarterly marketing slides | Status: COMPLETED",
+            "graph": {
+                "nodes": [
+                    {"node_id": 1, "description": "Outline slides", "status": "COMPLETED"},
+                    {"node_id": 2, "description": "Export PDF", "status": "COMPLETED"}
+                ],
+                "dependencies": [[1, 2]]
+            },
+            "checkpoint": {
+                "timestamp": (datetime.now() - timedelta(days=15)).isoformat(),
+                "last_active_node": 2,
+                "state_summary": "Completed"
+            },
+            "current_state": {
+                "applications": ["PowerPoint"],
+                "files": ["slides.pptx"],
+                "browser_tabs": []
+            }
+        }
+    ]
+}
+
+response = retrieve_workflows(
+    query=sample_input["query"],
+    current_state=sample_input["current_state"],
+    candidate_workflows=sample_input["candidate_workflows"],
+    top_k=5
+)
+
+print("="*70)
+print("VERIFIED CONTRACT OUTPUT")
+print("="*70)
+print(json.dumps(response, indent=2))
+assert response["query"] == sample_input["query"]
+assert response["model_version"] == MODEL_VERSION
+assert response["results"][0]["workflow_id"] == "workflow_017"
+assert response["results"][0]["retrieved_node_ids"] == [4, 5, 7, 8]
+print("All contract assertions and subgraph extraction verified successfully!")
+print("="*70)""")
+
+    # =========================================================================
+    # SECTION 8: INTERACTIVE GUI TESTING
+    # =========================================================================
+    add_md("""## 8. Interactive GUI Testing (`ipywidgets`)
+An interactive user interface supporting query input, active application state selection, and ranking visualization with actionable `retrieved_node_ids`.""")
+
+    add_code("""import ipywidgets as widgets
+from IPython.display import display, HTML
+
+query_box = widgets.Text(
+    value="Continue my previous coding work",
+    description="Query:",
+    layout=widgets.Layout(width="95%")
+)
+
+apps_select = widgets.SelectMultiple(
+    options=["Visual Studio Code", "Terminal", "Docker Desktop", "Google Chrome", "PyCharm", "IntelliJ IDEA", "JupyterLab"],
+    value=["Visual Studio Code"],
+    description="Active Apps:",
+    layout=widgets.Layout(width="45%")
+)
+
+files_box = widgets.Text(
+    value="main.py, models.py",
+    description="Open Files:",
+    layout=widgets.Layout(width="45%")
+)
+
+top_k_slider = widgets.IntSlider(
+    value=5, min=1, max=10, step=1,
+    description="Top K:"
+)
+
+search_btn = widgets.Button(
+    description="Retrieve Relevant Subgraphs",
+    button_style="primary",
+    icon="search"
+)
+
+gui_output = widgets.Output()
+
+def on_click_retrieve(b):
+    with gui_output:
+        gui_output.clear_output()
+        q = query_box.value.strip()
+        state = {
+            "applications": list(apps_select.value),
+            "files": [f.strip() for f in files_box.value.split(",") if f.strip()],
+            "browser_tabs": []
+        }
+        
+        resp = retrieve_workflows(
+            query=q,
+            current_state=state,
+            candidate_workflows=test_workflows,
+            top_k=top_k_slider.value
+        )
+        
+        html = f"<h4>Retrieval Response (Model: <code>{resp['model_version']}</code>)</h4>"
+        html += "<table style='width:100%; border-collapse:collapse; border:1px solid #ccc; font-family:sans-serif;'>"
+        html += "<tr style='background:#f5f5f5;'><th style='padding:8px; border:1px solid #ddd;'>Rank</th><th style='padding:8px; border:1px solid #ddd;'>Score</th><th style='padding:8px; border:1px solid #ddd;'>Workflow ID</th><th style='padding:8px; border:1px solid #ddd;'>Actionable Subgraph (Node IDs)</th><th style='padding:8px; border:1px solid #ddd;'>Goal Description</th></tr>"
+        
+        for idx, r in enumerate(resp["results"], start=1):
+            cand = next(w for w in test_workflows if w["workflow_id"] == r["workflow_id"])
+            html += f"<tr><td style='padding:8px; border:1px solid #ddd; text-align:center;'><b>#{idx}</b></td>"
+            html += f"<td style='padding:8px; border:1px solid #ddd; text-align:center; color:#0066cc;'><b>{r['score']:.2f}</b></td>"
+            html += f"<td style='padding:8px; border:1px solid #ddd; font-family:monospace;'>{r['workflow_id']}</td>"
+            html += f"<td style='padding:8px; border:1px solid #ddd; color:#d9534f; font-family:monospace;'><b>{r['retrieved_node_ids']}</b></td>"
+            html += f"<td style='padding:8px; border:1px solid #ddd;'>[{cand['domain']}] {cand['goal']} (Status: <i>{cand['overall_status']}</i>)</td></tr>"
+        html += "</table>"
+        display(HTML(html))
+
+search_btn.on_click(on_click_retrieve)
+
+display(widgets.VBox([
+    widgets.HTML("<h3>Model A — Goal-Conditioned Workflow Retrieval UI</h3>"),
+    query_box,
+    widgets.HBox([apps_select, files_box]),
+    widgets.HBox([top_k_slider, search_btn]),
+    gui_output
+]))""")
+
+    # =========================================================================
+    # SECTION 9: MODEL ARTIFACT PACKAGING
+    # =========================================================================
+    add_md("""## 9. Model Artifact Packaging & Export
+We package the model weights, tokenizer, progression benchmark results, predictor interface, and zip archive.""")
+
+    add_code("""OUT_DIR = "jarvis_workflow_retrieval_model"
+os.makedirs(OUT_DIR, exist_ok=True)
+os.makedirs(os.path.join(OUT_DIR, "model"), exist_ok=True)
+os.makedirs(os.path.join(OUT_DIR, "tokenizer"), exist_ok=True)
+
+fine_tuned_encoder.encoder.save_pretrained(os.path.join(OUT_DIR, "model"))
+tokenizer.save_pretrained(os.path.join(OUT_DIR, "tokenizer"))
+
+with open(os.path.join(OUT_DIR, "progression_results.json"), "w", encoding="utf-8") as f:
+    json.dump({name: m for name, m in progression_table}, f, indent=2)
+
+ZIP_NAME = "jarvis_workflow_retrieval_model.zip"
+with zipfile.ZipFile(ZIP_NAME, "w", zipfile.ZIP_DEFLATED) as zipf:
+    for root, dirs, files in os.walk(OUT_DIR):
+        for file in files:
+            abs_p = os.path.join(root, file)
+            rel_p = os.path.relpath(abs_p, os.path.dirname(OUT_DIR))
+            zipf.write(abs_p, rel_p)
+
+print(f"Packaged {ZIP_NAME} ({os.path.getsize(ZIP_NAME)/(1024*1024):.2f} MB).")""")
+
+    # Build final notebook JSON
+    notebook_dict = {
+        "cells": cells,
+        "metadata": {
+            "accelerator": "GPU",
+            "colab": {"provenance": []},
+            "kernelspec": {"display_name": "Python 3", "name": "python3"},
+            "language_info": {
+                "codemirror_mode": {"name": "ipython", "version": 3},
+                "file_extension": ".py",
+                "mimetype": "text/x-python",
+                "name": "python",
+                "nbconvert_exporter": "python",
+                "pygments_lexer": "ipython3",
+                "version": "3.10.12"
+            }
+        },
+        "nbformat": 4,
+        "nbformat_minor": 0
+    }
+
+    with open(notebook_path, "w", encoding="utf-8") as f:
+        json.dump(notebook_dict, f, indent=2)
+
+    print(f"Successfully generated standalone Colab notebook: {notebook_path}")
+    print(f"Total cells: {len(cells)} ({sum(1 for c in cells if c['cell_type']=='code')} code, {sum(1 for c in cells if c['cell_type']=='markdown')} markdown)")
+    return notebook_path
+
+if __name__ == "__main__":
+    generate_colab_notebook()

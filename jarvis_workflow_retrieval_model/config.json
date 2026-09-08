@@ -1,0 +1,12 @@
+{
+  "model_name": "JARVIS-WorkflowRetrieval-v1.0",
+  "base_encoder": "sentence-transformers/all-MiniLM-L6-v2",
+  "architecture": "WorkflowBiEncoder (MiniLM-L6 with Mean-Pooling + Unit Normalization)",
+  "embedding_dimension": 384,
+  "temperature": 0.05,
+  "contrastive_loss": "InfoNCE / Multiple Negatives Ranking Loss (Symmetric)",
+  "pooling_mode": "mean",
+  "normalization": "L2",
+  "max_seq_length_query": 128,
+  "max_seq_length_workflow": 256
+}

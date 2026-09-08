@@ -1,0 +1,337 @@
+{
+  "model_version": "JARVIS-WorkflowRetrieval-v1.0",
+  "predictions": [
+    {
+      "query": "Open the page to schedule a Model X test drive.",
+      "ground_truth_id": "851ed4e6-51ee-47ad-a861-a28bdc61a102",
+      "top_1_id": "851ed4e6-51ee-47ad-a861-a28bdc61a102",
+      "top_1_score": 0.9420999884605408,
+      "rank_of_correct": 1,
+      "latency_ms": 14.477499993517995,
+      "results": [
+        {
+          "workflow_id": "851ed4e6-51ee-47ad-a861-a28bdc61a102",
+          "score": 0.9420999884605408,
+          "rank": 1
+        },
+        {
+          "workflow_id": "a31de393-c6e0-4175-858b-03cdc435d585",
+          "score": 0.051600001752376556,
+          "rank": 2
+        },
+        {
+          "workflow_id": "46a3683f-fbe0-40d0-8729-6c7964d994e6",
+          "score": 0.04500000178813934,
+          "rank": 3
+        },
+        {
+          "workflow_id": "a6372f23-f462-4706-8455-5b350c46d83c",
+          "score": 0.04340000078082085,
+          "rank": 4
+        },
+        {
+          "workflow_id": "c82bd6d6-6f08-4f1d-aeef-351c86694bbc",
+          "score": 0.042100001126527786,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query": "Browse for wall art with a price range of $25 to $50.",
+      "ground_truth_id": "4b2030ff-b83c-445f-bf87-9c8fbc68498b",
+      "top_1_id": "4b2030ff-b83c-445f-bf87-9c8fbc68498b",
+      "top_1_score": 0.9441999793052673,
+      "rank_of_correct": 1,
+      "latency_ms": 13.27379999565892,
+      "results": [
+        {
+          "workflow_id": "4b2030ff-b83c-445f-bf87-9c8fbc68498b",
+          "score": 0.9441999793052673,
+          "rank": 1
+        },
+        {
+          "workflow_id": "a31de393-c6e0-4175-858b-03cdc435d585",
+          "score": 0.05779999867081642,
+          "rank": 2
+        },
+        {
+          "workflow_id": "de1045f4-14ce-4de9-9aa8-601315b73b0e",
+          "score": 0.049400001764297485,
+          "rank": 3
+        },
+        {
+          "workflow_id": "46a3683f-fbe0-40d0-8729-6c7964d994e6",
+          "score": 0.03840000182390213,
+          "rank": 4
+        },
+        {
+          "workflow_id": "b910229f-6133-452c-a640-6a6ec67b668b",
+          "score": 0.03020000085234642,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query": "Find motorcycle parking near Radio City Music Hall.",
+      "ground_truth_id": "9ed8cd2a-b0f8-4ccf-9d48-1ddfba4f5e58",
+      "top_1_id": "9ed8cd2a-b0f8-4ccf-9d48-1ddfba4f5e58",
+      "top_1_score": 0.913100004196167,
+      "rank_of_correct": 1,
+      "latency_ms": 12.549600010970607,
+      "results": [
+        {
+          "workflow_id": "9ed8cd2a-b0f8-4ccf-9d48-1ddfba4f5e58",
+          "score": 0.913100004196167,
+          "rank": 1
+        },
+        {
+          "workflow_id": "a31de393-c6e0-4175-858b-03cdc435d585",
+          "score": 0.2858000099658966,
+          "rank": 2
+        },
+        {
+          "workflow_id": "c82bd6d6-6f08-4f1d-aeef-351c86694bbc",
+          "score": 0.1777999997138977,
+          "rank": 3
+        },
+        {
+          "workflow_id": "a6372f23-f462-4706-8455-5b350c46d83c",
+          "score": 0.03350000083446503,
+          "rank": 4
+        },
+        {
+          "workflow_id": "de1045f4-14ce-4de9-9aa8-601315b73b0e",
+          "score": -0.01600000075995922,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query": "Browse events happening at Madison Square Garden.",
+      "ground_truth_id": "a31de393-c6e0-4175-858b-03cdc435d585",
+      "top_1_id": "a31de393-c6e0-4175-858b-03cdc435d585",
+      "top_1_score": 0.7123000025749207,
+      "rank_of_correct": 1,
+      "latency_ms": 12.525300000561401,
+      "results": [
+        {
+          "workflow_id": "a31de393-c6e0-4175-858b-03cdc435d585",
+          "score": 0.7123000025749207,
+          "rank": 1
+        },
+        {
+          "workflow_id": "c82bd6d6-6f08-4f1d-aeef-351c86694bbc",
+          "score": 0.11840000003576279,
+          "rank": 2
+        },
+        {
+          "workflow_id": "a6372f23-f462-4706-8455-5b350c46d83c",
+          "score": 0.02630000002682209,
+          "rank": 3
+        },
+        {
+          "workflow_id": "9ed8cd2a-b0f8-4ccf-9d48-1ddfba4f5e58",
+          "score": 0.001500000013038516,
+          "rank": 4
+        },
+        {
+          "workflow_id": "4b2030ff-b83c-445f-bf87-9c8fbc68498b",
+          "score": -0.0020000000949949026,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query": "Get quote for Amtrak vacation for two adults across country while leaving from Chicago on the 22nd of April. It should include Deluxe bedroom. The passenger is named John Mark with email address of johnmark@gmail.com and phone number of 234567890.",
+      "ground_truth_id": "b910229f-6133-452c-a640-6a6ec67b668b",
+      "top_1_id": "b910229f-6133-452c-a640-6a6ec67b668b",
+      "top_1_score": 0.8801000118255615,
+      "rank_of_correct": 1,
+      "latency_ms": 20.0343000178691,
+      "results": [
+        {
+          "workflow_id": "b910229f-6133-452c-a640-6a6ec67b668b",
+          "score": 0.8801000118255615,
+          "rank": 1
+        },
+        {
+          "workflow_id": "4b2030ff-b83c-445f-bf87-9c8fbc68498b",
+          "score": 0.05700000002980232,
+          "rank": 2
+        },
+        {
+          "workflow_id": "a31de393-c6e0-4175-858b-03cdc435d585",
+          "score": 0.0215000007301569,
+          "rank": 3
+        },
+        {
+          "workflow_id": "851ed4e6-51ee-47ad-a861-a28bdc61a102",
+          "score": 0.008500000461935997,
+          "rank": 4
+        },
+        {
+          "workflow_id": "46a3683f-fbe0-40d0-8729-6c7964d994e6",
+          "score": 0.005100000184029341,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query": "Find the newest movies for rent  in the Redbox kiosk at any Winn Dixie in Daytona Beach.",
+      "ground_truth_id": "c82bd6d6-6f08-4f1d-aeef-351c86694bbc",
+      "top_1_id": "c82bd6d6-6f08-4f1d-aeef-351c86694bbc",
+      "top_1_score": 0.9261000156402588,
+      "rank_of_correct": 1,
+      "latency_ms": 19.191500003216788,
+      "results": [
+        {
+          "workflow_id": "c82bd6d6-6f08-4f1d-aeef-351c86694bbc",
+          "score": 0.9261000156402588,
+          "rank": 1
+        },
+        {
+          "workflow_id": "de1045f4-14ce-4de9-9aa8-601315b73b0e",
+          "score": 0.22789999842643738,
+          "rank": 2
+        },
+        {
+          "workflow_id": "a31de393-c6e0-4175-858b-03cdc435d585",
+          "score": 0.1251000016927719,
+          "rank": 3
+        },
+        {
+          "workflow_id": "9ed8cd2a-b0f8-4ccf-9d48-1ddfba4f5e58",
+          "score": 0.10419999808073044,
+          "rank": 4
+        },
+        {
+          "workflow_id": "a6372f23-f462-4706-8455-5b350c46d83c",
+          "score": 0.0357000008225441,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query": "Book a winery tour in Napa Valley in a winery which serves Mediterranean cuisine with wine testing for 4 guests on April 15, 10 am in a outdoor setup.",
+      "ground_truth_id": "a6372f23-f462-4706-8455-5b350c46d83c",
+      "top_1_id": "a6372f23-f462-4706-8455-5b350c46d83c",
+      "top_1_score": 0.8855999708175659,
+      "rank_of_correct": 1,
+      "latency_ms": 19.848199997795746,
+      "results": [
+        {
+          "workflow_id": "a6372f23-f462-4706-8455-5b350c46d83c",
+          "score": 0.8855999708175659,
+          "rank": 1
+        },
+        {
+          "workflow_id": "851ed4e6-51ee-47ad-a861-a28bdc61a102",
+          "score": 0.16449999809265137,
+          "rank": 2
+        },
+        {
+          "workflow_id": "b910229f-6133-452c-a640-6a6ec67b668b",
+          "score": 0.13930000364780426,
+          "rank": 3
+        },
+        {
+          "workflow_id": "c82bd6d6-6f08-4f1d-aeef-351c86694bbc",
+          "score": 0.10189999639987946,
+          "rank": 4
+        },
+        {
+          "workflow_id": "de1045f4-14ce-4de9-9aa8-601315b73b0e",
+          "score": 0.09740000218153,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query": "Find a men's UA outlet T-shirt of XL size and add to cart.",
+      "ground_truth_id": "46a3683f-fbe0-40d0-8729-6c7964d994e6",
+      "top_1_id": "46a3683f-fbe0-40d0-8729-6c7964d994e6",
+      "top_1_score": 0.8934999704360962,
+      "rank_of_correct": 1,
+      "latency_ms": 17.637499986449257,
+      "results": [
+        {
+          "workflow_id": "46a3683f-fbe0-40d0-8729-6c7964d994e6",
+          "score": 0.8934999704360962,
+          "rank": 1
+        },
+        {
+          "workflow_id": "de1045f4-14ce-4de9-9aa8-601315b73b0e",
+          "score": 0.04639999940991402,
+          "rank": 2
+        },
+        {
+          "workflow_id": "a6372f23-f462-4706-8455-5b350c46d83c",
+          "score": 0.042399998754262924,
+          "rank": 3
+        },
+        {
+          "workflow_id": "851ed4e6-51ee-47ad-a861-a28bdc61a102",
+          "score": 0.03060000017285347,
+          "rank": 4
+        },
+        {
+          "workflow_id": "4b2030ff-b83c-445f-bf87-9c8fbc68498b",
+          "score": -0.00989999994635582,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query": "Get the most popular documentary tv series sorted by IMDB rating, see the details of the top result.",
+      "ground_truth_id": "de1045f4-14ce-4de9-9aa8-601315b73b0e",
+      "top_1_id": "de1045f4-14ce-4de9-9aa8-601315b73b0e",
+      "top_1_score": 0.9143000245094299,
+      "rank_of_correct": 1,
+      "latency_ms": 18.075900006806478,
+      "results": [
+        {
+          "workflow_id": "de1045f4-14ce-4de9-9aa8-601315b73b0e",
+          "score": 0.9143000245094299,
+          "rank": 1
+        },
+        {
+          "workflow_id": "c82bd6d6-6f08-4f1d-aeef-351c86694bbc",
+          "score": 0.22280000150203705,
+          "rank": 2
+        },
+        {
+          "workflow_id": "46a3683f-fbe0-40d0-8729-6c7964d994e6",
+          "score": 0.025299999862909317,
+          "rank": 3
+        },
+        {
+          "workflow_id": "a6372f23-f462-4706-8455-5b350c46d83c",
+          "score": 0.01730000041425228,
+          "rank": 4
+        },
+        {
+          "workflow_id": "9ed8cd2a-b0f8-4ccf-9d48-1ddfba4f5e58",
+          "score": -0.01209999993443489,
+          "rank": 5
+        }
+      ]
+    }
+  ],
+  "error_analysis_cases": [
+    {
+      "query": "Open the page to schedule a Model X test drive.",
+      "correct_workflow_id": "851ed4e6-51ee-47ad-a861-a28bdc61a102",
+      "correct_goal": "Open the page to schedule a Model X test drive.",
+      "correct_workflow_actions": [
+        "[button]  Menu -> CLICK",
+        "[link]  Demo Drive -> CLICK",
+        "[button]  Model X -> CLICK"
+      ],
+      "runner_up_workflow_id": "a31de393-c6e0-4175-858b-03cdc435d585",
+      "runner_up_goal": "Browse events happening at Madison Square Garden.",
+      "runner_up_score": 0.051600001752376556,
+      "similarity_margin": 0.8905,
+      "boundary_analysis": "Close competitor sharing similar web interaction modalities; successfully separated by fine-tuned encoder."
+    }
+  ]
+}

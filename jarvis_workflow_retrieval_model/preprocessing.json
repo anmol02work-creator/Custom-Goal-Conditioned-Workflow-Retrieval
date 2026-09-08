@@ -1,0 +1,8 @@
+{
+  "serialization_template": "Task: {confirmed_task} | Workflow Actions: {action_1} -> {action_2} ...",
+  "tokenizer_type": "WordPiece",
+  "max_query_tokens": 128,
+  "max_workflow_tokens": 256,
+  "truncation": true,
+  "padding": "max_length_or_batch_dynamic"
+}

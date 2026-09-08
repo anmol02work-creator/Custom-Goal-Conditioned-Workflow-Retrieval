@@ -1,0 +1,75 @@
+{
+  "evaluation_timestamp": "2026-09-06T21:18:15.187379",
+  "test_dataset_size": 9,
+  "baselines": {
+    "TF-IDF": {
+      "R@1": 1.0,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 1.0,
+      "nDCG@5": 1.0,
+      "mean_latency_ms": 0.8456000133365806,
+      "median_latency_ms": 0.804100011009723
+    },
+    "Pretrained_Zero_Shot": {
+      "R@1": 1.0,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 1.0,
+      "nDCG@5": 1.0,
+      "mean_latency_ms": 15.792377778173735,
+      "median_latency_ms": 15.513399994233623
+    },
+    "Fine_Tuned_Model": {
+      "R@1": 1.0,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 1.0,
+      "nDCG@5": 1.0,
+      "mean_latency_ms": 16.401511112538476,
+      "median_latency_ms": 17.637499986449257
+    }
+  },
+  "ablations": {
+    "Pretrained (Zero-Shot) - Goal+Actions": {
+      "R@1": 1.0,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 1.0,
+      "nDCG@5": 1.0,
+      "mean_latency_ms": 15.792377778173735,
+      "median_latency_ms": 15.513399994233623
+    },
+    "Fine-Tuned - Task Goal Only": {
+      "R@1": 1.0,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 1.0,
+      "nDCG@5": 1.0,
+      "mean_latency_ms": 22.469477776515607,
+      "median_latency_ms": 21.78549999371171
+    },
+    "Fine-Tuned - Workflow Actions Only": {
+      "R@1": 1.0,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 1.0,
+      "nDCG@5": 1.0,
+      "mean_latency_ms": 16.817222226462846,
+      "median_latency_ms": 16.490700014401227
+    },
+    "Fine-Tuned - Goal + Actions (Full)": {
+      "R@1": 1.0,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 1.0,
+      "nDCG@5": 1.0,
+      "mean_latency_ms": 16.401511112538476,
+      "median_latency_ms": 17.637499986449257
+    }
+  },
+  "hardware": {
+    "device": "cpu",
+    "torch_version": "2.8.0+cpu"
+  }
+}

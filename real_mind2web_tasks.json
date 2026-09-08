@@ -1,0 +1,4426 @@
+[
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "7bda9645-0b5f-470a-8dd7-6af0bff4da68",
+    "trajectory_id": "7bda9645-0b5f-470a-8dd7-6af0bff4da68_traj",
+    "source_split": "train",
+    "website": "exploretock",
+    "domain": "Travel",
+    "subdomain": "Restaurant",
+    "confirmed_task": "Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest",
+    "action_reprs": [
+      "[combobox]  Reservation type -> SELECT: Pickup",
+      "[svg]   -> CLICK",
+      "[searchbox]  Find a location -> TYPE: Boston",
+      "[span]  Boston -> CLICK",
+      "[svg]   -> CLICK",
+      "[button]  18 -> CLICK",
+      "[combobox]  Time -> SELECT: 5:00 PM",
+      "[svg]   -> CLICK",
+      "[span]  2 guests -> CLICK",
+      "[combobox]  Size -> SELECT: 1 guest",
+      "[button]  Update search -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "961c3a5e-f8ce-4c71-a917-aa546dcea7fb",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "Pickup"
+      },
+      {
+        "action_uid": "30732d9f-efee-4ba4-8b2a-a72e47d5bde6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "5bbb896b-8564-4603-9fc7-16ef2a072d56",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Boston"
+      },
+      {
+        "action_uid": "34eccecf-fd3e-43ca-965c-98d3be310a29",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "dc327d5f-d07b-496d-8680-400483790fce",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "60794dd3-fdc5-4c9a-9b1f-c84d44ea1544",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2b7cd081-ffb7-4ead-9b48-8c8a72c92b5f",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "5 00 PM"
+      },
+      {
+        "action_uid": "a645bce8-e7b5-44ef-99b2-045410868809",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "41574158-9bb5-445b-8eb8-e3bd3ffc02bc",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8dd6021e-c277-488e-bfb9-2e65698d85bc",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "1 guest"
+      },
+      {
+        "action_uid": "0bc81932-85d7-467f-8ef7-294f55118587",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "a6372f23-f462-4706-8455-5b350c46d83c",
+    "trajectory_id": "a6372f23-f462-4706-8455-5b350c46d83c_traj",
+    "source_split": "train",
+    "website": "exploretock",
+    "domain": "Travel",
+    "subdomain": "Restaurant",
+    "confirmed_task": "Book a winery tour in Napa Valley in a winery which serves Mediterranean cuisine with wine testing for 4 guests on April 15, 10 am in a outdoor setup.",
+    "action_reprs": [
+      "[svg]   -> CLICK",
+      "[svg]   -> CLICK",
+      "[searchbox]  Find a location -> TYPE: NAPA VALLEY",
+      "[span]  Napa Valley -> CLICK",
+      "[combobox]  Reservation type -> SELECT: Wineries",
+      "[svg]   -> CLICK",
+      "[svg]   -> CLICK",
+      "[button]  15 -> CLICK",
+      "[combobox]  Time -> SELECT: 10:00 AM",
+      "[combobox]  Party size -> SELECT: 4 guests",
+      "[svg]   -> CLICK",
+      "[button]  Edit cuisine type filter -> CLICK",
+      "[checkbox]  Mediterranean -> CLICK",
+      "[button]  Submit -> CLICK",
+      "[button]  Open additional search filters -> CLICK",
+      "[checkbox]  Outdoors -> CLICK",
+      "[checkbox]  Wine tasting -> CLICK",
+      "[button]  Update search -> CLICK",
+      "[span]  10:00 AM -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "cb306aa7-a977-4b22-a191-4e7ff1683495",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "9f40df58-a7fa-4181-b1a9-f08a0f0bd2eb",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "dab1ffd9-2df1-450b-8d68-120b605f8d45",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "NAPA VALLEY"
+      },
+      {
+        "action_uid": "3f1a8555-f976-4d2d-a9cc-d53a972709bd",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "97773a8e-0f6a-46e6-b900-726dc84c0b7d",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "Wineries"
+      },
+      {
+        "action_uid": "d4ddbbb9-4b1c-4cd9-b4b9-e938ed17e04e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2ac7ed26-b119-4a0a-bcdb-a83f63b211f2",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "fbca318e-9c4e-417a-9f36-e39c77345c0a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f932237e-6a41-40a9-8df8-38ab876cc6b5",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "10 00 AM"
+      },
+      {
+        "action_uid": "5631a528-35ea-425a-acb7-41c0fa888737",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "4 guests"
+      },
+      {
+        "action_uid": "e7444f63-7c77-4462-a723-ab00e729c46d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "086ab8cc-7f5e-43b0-9b03-ba376d208f4b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "549a5ad5-d37c-4180-8797-01abf12af15c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "36665f93-2ffe-41d3-9c44-bffa85122390",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "25614f00-cfb4-4d96-9189-80974032e6bb",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "da70fb73-dad9-4999-beb2-e770abc20a73",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a091ad8f-b00e-4d24-838b-439f2c89e0c3",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d02d7a6c-c5d6-4b61-bd22-20a8e2309ea5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b36d2bf4-1700-4742-a245-e46c85973a6f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "c0eeead1-f8ea-4819-a6da-ef0108b40c89",
+    "trajectory_id": "c0eeead1-f8ea-4819-a6da-ef0108b40c89_traj",
+    "source_split": "train",
+    "website": "enterprise",
+    "domain": "Travel",
+    "subdomain": "Car rental",
+    "confirmed_task": "Sign Allan Smith for email offers with the email allan.smith@gmail.com and zip code 10001",
+    "action_reprs": [
+      "[a]   -> CLICK",
+      "[textbox]  First Name (required) -> TYPE: Allan",
+      "[textbox]  Last Name (required) -> TYPE: Smith",
+      "[textbox]  Email Address (required) -> TYPE: allan.smith@gmail.com",
+      "[textbox]  Confirm Email Address (required) -> TYPE: allan.smith@gmail.com",
+      "[textbox]  ZIP Code (required) -> TYPE: 10001",
+      "[button]  Submit -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "4e8460ff-798c-4c79-9596-6f4ef871581c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "093733bb-a6a3-48b0-9aa5-bbe2a4b258aa",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Allan"
+      },
+      {
+        "action_uid": "3f6e79c5-fb1f-41c7-be6c-53bedd7bd544",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Smith"
+      },
+      {
+        "action_uid": "0be743dd-2860-4ed8-81aa-211cb3c67518",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "allan.smith@gmail.com"
+      },
+      {
+        "action_uid": "ec602108-1535-425d-be37-bc2d202490c6",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "allan.smith@gmail.com"
+      },
+      {
+        "action_uid": "df415b14-e121-43a8-8548-058989210645",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "10001"
+      },
+      {
+        "action_uid": "3b6ab224-8bd0-4206-ada8-7e14e8308314",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "ce34bc61-e3d2-40c8-b02b-b149efc4b115",
+    "trajectory_id": "ce34bc61-e3d2-40c8-b02b-b149efc4b115_traj",
+    "source_split": "train",
+    "website": "enterprise",
+    "domain": "Travel",
+    "subdomain": "Car rental",
+    "confirmed_task": "Find a mini van at Brooklyn City from April 5th to April 8th for a 22 year old renter.",
+    "action_reprs": [
+      "[searchbox]  Pick-up & Return Location (ZIP, City or Airport) (... -> TYPE: Brooklyn",
+      "[option]  Brooklyn, NY, US Select -> CLICK",
+      "[button]  Selected Pick-Up Date 03/19/2023 -> CLICK",
+      "[button]  04/05/2023 -> CLICK",
+      "[svg]   -> CLICK",
+      "[button]  04/08/2023 -> CLICK",
+      "[combobox]  Renter Age -> SELECT: 22",
+      "[button]  Vehicle Class -> CLICK",
+      "[radio]  Minivans -> CLICK",
+      "[button]  Apply Filter -> CLICK",
+      "[button]  Browse Vehicles -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "25ed6cca-1f43-4bd0-a185-8d4db5e858e9",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Brooklyn"
+      },
+      {
+        "action_uid": "3b8ad033-513a-4bff-9546-bda8e4d9c844",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "143b4db4-0c32-4579-9fe3-edc5b7cdf40d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f7a5ee05-b056-4d74-8dbe-1a6ea359f004",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ece08dd8-43c8-4f4c-a1cc-58789edfd449",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b2fae695-2147-4942-8629-9379ac0a96e6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "24d96aba-20ef-4923-b4ce-41d35ddd7a45",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "22"
+      },
+      {
+        "action_uid": "18a087b4-2e0a-4bb1-828e-6eabfe01b850",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "230628ec-5182-4284-8bc5-a4bf221832e7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2de322fb-c659-4be9-90bf-9c7010ba87e3",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "82b45e0c-6d98-47d6-9691-3d2d8a21abe6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "bf469f30-6628-4017-b963-672645d7feab",
+    "trajectory_id": "bf469f30-6628-4017-b963-672645d7feab_traj",
+    "source_split": "train",
+    "website": "kohls",
+    "domain": "Shopping",
+    "subdomain": "Department",
+    "confirmed_task": "Find the highest rated dog collar under 10 dollar.",
+    "action_reprs": [
+      "[link]  Shop by Category -> CLICK",
+      "[link]  Pet -> CLICK",
+      "[span]  Pet Type -> CLICK",
+      "[link]  Dog (1,338) -> CLICK",
+      "[span]  Category -> CLICK",
+      "[link]  Collars & Leashes (485) -> CLICK",
+      "[link]  Sort by: Featured -> CLICK",
+      "[link]  Highest Rated -> CLICK",
+      "[div]  Price -> CLICK",
+      "[link]  Under $10 (1) -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "79c96944-392d-47c9-8e3f-69c5d075f1c6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c280a5bd-f3af-43ab-a64b-29e6984be6b8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "9376f06f-d441-4ad0-8f26-502331ad9fd5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "14fbcad5-7316-455e-af71-4205fb2df872",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "74bfa8a6-c7a4-4df1-935c-57ff41629dd6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c148dec2-df53-4d6d-8da3-c1277ded7048",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "37982fe3-0a00-4cb0-81bd-93641d095722",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ff268edf-5481-45b7-87dd-16072ddacf02",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "57746056-f9a1-4dee-a17d-3ce65f01e4b9",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "51e9982e-0a95-4525-af85-fba89b577a34",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "9e035a36-1c77-4014-98ec-4d48ee41d904",
+    "trajectory_id": "9e035a36-1c77-4014-98ec-4d48ee41d904_traj",
+    "source_split": "train",
+    "website": "united",
+    "domain": "Travel",
+    "subdomain": "Airlines",
+    "confirmed_task": "Compare the fare types to book a 1-adult ticket from Springfiels, IL to Austin, TX for April 29th 2023",
+    "action_reprs": [
+      "[combobox]  Enter your departing city, airport name, or airpor... -> TYPE: SPRINGFIELD",
+      "[button]  Springfield, IL, US (SPI) -> CLICK",
+      "[combobox]  Enter your destination city, airport name, or airp... -> TYPE: AUSTIN",
+      "[button]  Austin, TX, US (AUS) -> CLICK",
+      "[span]   -> CLICK",
+      "[button]  Find flights -> CLICK",
+      "[textbox]  Date -> CLICK",
+      "[button]  Move backward to switch to the previous month. -> CLICK",
+      "[button]  Saturday, April 29, 2023 -> CLICK",
+      "[button]  Update -> CLICK",
+      "[link]  Details -> CLICK",
+      "[link]  Seats -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "92de7066-88c4-424e-97df-4a48ba0b59b5",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "SPRINGFIELD"
+      },
+      {
+        "action_uid": "10212b24-195e-48c9-acae-cb2350a78ceb",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d7a941ee-56f7-4e42-8143-8a9ef38682bd",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "AUSTIN"
+      },
+      {
+        "action_uid": "f34ec95c-8c93-4e9a-8b49-69c0eaee86e0",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b74474d1-d37d-4bc9-9fb5-5d6a91112763",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "20ad31c2-db7f-461e-ae21-1fc7eb68b0bd",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "03b3771e-2a05-4a39-8770-852b2e28652c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "0b0bd6c0-a4c4-4a82-8757-549fe7ac92a4",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6a78e4e9-77a2-4025-8623-e0d7eda8379b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "75b39e1c-d143-4ade-8ba1-6ebad9aacff8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e43f76e5-39ac-4f14-a2e3-652f293ea5aa",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a3049f40-57a6-4b30-bb6f-49183455254d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "cf361c84-6414-4b05-a7a1-77383997150a",
+    "trajectory_id": "cf361c84-6414-4b05-a7a1-77383997150a_traj",
+    "source_split": "train",
+    "website": "budget",
+    "domain": "Travel",
+    "subdomain": "Car rental",
+    "confirmed_task": "Get an SUV with an additional driver and wifi for pick up in  any rental location near Washington regional airport on June 1, 11 am, and drop off at Washington international airport on June 2, 11 am, and pay for the booking instantly.",
+    "action_reprs": [
+      "[button]  Locations -> HOVER",
+      "[link]  Find a Location -> CLICK",
+      "[textbox]  Search by Airport, City, Zip, Address or Attractio... -> TYPE: washington",
+      "[span]  Washington County Regional Apo -> CLICK",
+      "[link]  Make a Reservation -> CLICK",
+      "[textbox]  mm/dd/yyyy -> CLICK",
+      "[link]  Next -> CLICK",
+      "[link]  1 -> CLICK",
+      "[link]  2 -> CLICK",
+      "[combobox]  Pick Up Time -> SELECT: 11:00 AM",
+      "[combobox]  Return Time -> SELECT: 11:00 AM",
+      "[textbox]  Return to same location -> TYPE: washington",
+      "[div]  Washington Dulles Intl Airport -> CLICK",
+      "[generic]  Vehicle Type * -> CLICK",
+      "[p]  SUVs & Wagons -> CLICK",
+      "[button]  Select My Car -> CLICK",
+      "[link]  Pay Now -> CLICK",
+      "[checkbox]  $21.99/Day -> CLICK",
+      "[checkbox]  $13.00/Day -> CLICK",
+      "[button]  Continue -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "3fed27c4-2cb3-43d0-b92a-16275e1f8178",
+        "op": "CLICK",
+        "original_op": "HOVER",
+        "value": ""
+      },
+      {
+        "action_uid": "837177b9-fc1d-4b15-8035-b15efd915693",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e0c7be7c-eb3c-4ce7-b04d-d385aea37cbc",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "washington"
+      },
+      {
+        "action_uid": "b15f4f6f-413b-4ae7-bae8-1ca7e0b4d75a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "31ddff52-15df-4d0d-916c-18e1fb240ea2",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "33e7bd87-795d-44da-81be-390346b9829c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d4384cf9-8eba-4b9b-8cf6-fedec53fe0db",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "191f5324-8b5a-4b2d-aecd-47c7c053d9e5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "09c7f72f-1512-4342-b3c3-ae639ae8cdfc",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "227dfbfe-6b1f-473c-b87d-101c9dfd7306",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "11 00 AM"
+      },
+      {
+        "action_uid": "cf9d27ef-6bc2-4be0-a3e9-39527c596408",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "11 00 AM"
+      },
+      {
+        "action_uid": "4e2e6234-ed23-40c6-a6fc-c82108cd2f49",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "washington"
+      },
+      {
+        "action_uid": "953194de-40a5-42d9-8813-ec22b2a257f7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "657a05b7-3405-4ec1-bc74-6e2dcacc2244",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "230a1bfe-cf97-4bde-8268-f70287809032",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "1e35aad2-d7c4-415f-a641-d0f2f2249eae",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2190574e-5045-4a7c-aeab-5f9d88e544cd",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "1b698a2f-400b-4069-aa08-252e1b41c7e8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "7d52e0c3-c338-4214-889f-318d4ce15d5b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f493650e-0cf6-4904-89e7-62105a3d029a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "46a3683f-fbe0-40d0-8729-6c7964d994e6",
+    "trajectory_id": "46a3683f-fbe0-40d0-8729-6c7964d994e6_traj",
+    "source_split": "train",
+    "website": "underarmour",
+    "domain": "Shopping",
+    "subdomain": "Fashion",
+    "confirmed_task": "Find a men's UA outlet T-shirt of XL size and add to cart.",
+    "action_reprs": [
+      "[menuitem]  Outlet -> CLICK",
+      "[link]  Mens -> CLICK",
+      "[div]  Product Category -> CLICK",
+      "[link]  Clothing -> CLICK",
+      "[div]  Product Type -> CLICK",
+      "[link]  Short Sleeves -> CLICK",
+      "[div]  Size -> CLICK",
+      "[link]  XL -> CLICK",
+      "[img]  Men's UA Tech\u2122 2.0 Short Sleeve -> CLICK",
+      "[button]  XL -> CLICK",
+      "[button]  Add to Bag -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "69539b1f-4a50-4fd5-9700-d3406bff509d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "06076f5a-e49d-4f9d-aeb0-2947192e0d54",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "67cfe42d-b9db-4b88-a753-af5ee18af657",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d64e976c-6174-4f23-80ae-bb2a1af5a5a8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ed8cb3d3-6c92-4bc6-a927-ea4a11ef074d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6bb0ea02-190d-46c8-98fb-ebfe04f58ecd",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "11731204-34aa-4719-a789-eae83d26586a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "0f9dec76-0399-40ec-95ca-b76d4f091120",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "02471179-19b4-45e2-9121-a5e8a2a39f26",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "5dcf5117-8341-4ea2-a6eb-a516c41a71b8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "7425e091-4439-49a8-a6ff-c355ec0c4f34",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "4b2030ff-b83c-445f-bf87-9c8fbc68498b",
+    "trajectory_id": "4b2030ff-b83c-445f-bf87-9c8fbc68498b_traj",
+    "source_split": "train",
+    "website": "kohls",
+    "domain": "Shopping",
+    "subdomain": "Department",
+    "confirmed_task": "Browse for wall art with a price range of $25 to $50.",
+    "action_reprs": [
+      "[textbox]  Search by keyword or web id -> TYPE: wall art",
+      "[input]   -> CLICK",
+      "[link]  Wall Art -> CLICK",
+      "[div]  Price -> CLICK",
+      "[link]  $25 to $50 (5,006) -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "a4c16da0-0706-4d0a-a259-eb7657bbbbc9",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "wall art"
+      },
+      {
+        "action_uid": "ff0ee393-4490-4aaf-9fc0-a21fcdb41c9b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "4ddd632d-8b8f-40e6-ac97-45662fabdb64",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "7cf1ed05-1957-4d82-955e-7b21de6a6ff1",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8a5b0737-d36f-4476-bfdc-64c4c76d5551",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "4bc70fa1-e817-405f-b113-0919e8e94205",
+    "trajectory_id": "4bc70fa1-e817-405f-b113-0919e8e94205_traj",
+    "source_split": "train",
+    "website": "kohls",
+    "domain": "Shopping",
+    "subdomain": "Department",
+    "confirmed_task": "Add the cheapest Women's Sweaters to my shopping cart.",
+    "action_reprs": [
+      "[span]  Shop by Category -> CLICK",
+      "[link]  Women -> HOVER",
+      "[link]  Sweaters & Cardigans -> CLICK",
+      "[link]  Sort by: Featured -> CLICK",
+      "[link]  Price Low-High -> CLICK",
+      "[p]  Women's Sonoma Goods For Life\u00ae All Over Stitch -> CLICK",
+      "[button]  Add to Cart -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "aef52996-d58a-4772-9e64-05599aab864b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d26cb28b-0f54-4b70-bad7-c7e384c799c6",
+        "op": "CLICK",
+        "original_op": "HOVER",
+        "value": ""
+      },
+      {
+        "action_uid": "b1ec99ca-9953-4575-b633-8b9e6da0aee4",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "fc698c26-502b-442b-8790-0538d09406bc",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c8661052-8860-4fe0-b8aa-c95cd1ec01de",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "0abb352a-0694-4e74-85cf-d7c8a13373e9",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d2d729b6-3704-4165-b841-843500524934",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "b20e1dc4-651b-46e1-8470-16250657f2a8",
+    "trajectory_id": "b20e1dc4-651b-46e1-8470-16250657f2a8_traj",
+    "source_split": "train",
+    "website": "kayak",
+    "domain": "Travel",
+    "subdomain": "Airlines",
+    "confirmed_task": "Find a cheapest SUV in Brooklyn for 1 day.",
+    "action_reprs": [
+      "[link]  Search for cars -> CLICK",
+      "[textbox]  Pick-up location -> CLICK",
+      "[textbox]  Pick-up location -> TYPE: Brooklyn",
+      "[span]  Brooklyn, New York, United States -> CLICK",
+      "[span]  Different drop-off -> CLICK",
+      "[tab]  Same drop-off -> CLICK",
+      "[button]  End date -> CLICK",
+      "[button]  May 22, 2023 -> CLICK",
+      "[svg]   -> CLICK",
+      "[img]  SUV -> CLICK",
+      "[div]  $75 -> CLICK",
+      "[div]  View Deal -> HOVER"
+    ],
+    "actions": [
+      {
+        "action_uid": "470c7cf0-6d9e-4a43-913b-fb309a888da5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d8f45da9-b931-4adc-b980-61fc1ecf4943",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "56fa7b74-7f71-40c3-9efe-af9d76d7d282",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Brooklyn"
+      },
+      {
+        "action_uid": "56e1e554-8541-4c1a-a4bb-d8ad1f7b95cb",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "bc8a2b0a-b824-4d31-996a-98da91c17d68",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "24f091f2-2302-45cf-8a3b-6926028a8c8a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c31831cf-fcb1-4fc6-a696-aa5540372aa1",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "18f516f8-beaa-4338-a0dd-659293279207",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "20627442-25be-4dc3-aa4c-e36a3b8a6f3d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "75f3bf7b-84da-4fb6-9810-13ca7ce311fb",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a82c1270-924d-4758-86cd-30ba60260eb9",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "77ae34f7-69b8-4da8-90c9-5420ce7b170c",
+        "op": "CLICK",
+        "original_op": "HOVER",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "d63b1715-688c-4be2-b196-dde9659bc59d",
+    "trajectory_id": "d63b1715-688c-4be2-b196-dde9659bc59d_traj",
+    "source_split": "train",
+    "website": "kayak",
+    "domain": "Travel",
+    "subdomain": "Airlines",
+    "confirmed_task": "From Birmingham (BHX) to Paris search for packages with casinos, restaurant, fitness and a free internet from April 7th to 11th.",
+    "action_reprs": [
+      "[link]  Search for packages -> CLICK",
+      "[textbox]  From -> TYPE: Birmingham",
+      "[span]  Birmingham, England, United Kingdom -> CLICK",
+      "[textbox]  Enter destination or airport -> TYPE: Paris",
+      "[span]  City -> CLICK",
+      "[generic]  Tuesday April 4th -> CLICK",
+      "[div]  7 -> CLICK",
+      "[button]  Tuesday April 11, 2023 -> CLICK",
+      "[svg]   -> CLICK",
+      "[checkbox]  Free internet -> CLICK",
+      "[button]  Amenities -> CLICK",
+      "[checkbox]  Casino -> CLICK",
+      "[checkbox]  Restaurant -> CLICK",
+      "[checkbox]  Fitness -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "0dfd6898-ef1c-4b83-9abb-6fb4630af976",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ac7fadf0-dae5-47ce-b122-a54664a3566f",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Birmingham"
+      },
+      {
+        "action_uid": "b3044a24-aa62-41ae-a42c-b6ab256132f4",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "bddaad73-e494-46f5-a14b-25dddc2c137b",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Paris"
+      },
+      {
+        "action_uid": "fa7ae12a-1f5d-4463-820e-4ff9e9211281",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "1a23c4b3-11dc-419a-a0c3-e4d328690204",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2569ea8a-41ee-43ea-a7b7-6804a67043df",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "5bb23b9f-783a-4b44-8439-6703dd7bf340",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d816bb8a-ffc1-44f5-b1d4-87e9d0c46851",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6e7d4501-298a-4ea9-a266-e9ae3bc160b8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "4dfdc265-d3cd-47da-8fe1-7808d1596608",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "18f60177-0fe3-4abb-a4b8-22f8e0c6cbf8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "46135cac-6070-4b3c-a706-4ba121a6e9ef",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2c9a65ce-531f-4010-b149-949ce3004142",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "d1942a73-745f-44c5-ba30-0d0c7925f5d2",
+    "trajectory_id": "d1942a73-745f-44c5-ba30-0d0c7925f5d2_traj",
+    "source_split": "train",
+    "website": "rottentomatoes",
+    "domain": "Entertainment",
+    "subdomain": "Movie",
+    "confirmed_task": "Find a comedy movie streaming on Netflix and add to watchlist.",
+    "action_reprs": [
+      "[link]  MOVIES -> HOVER",
+      "[link]  Netflix streaming -> CLICK",
+      "[svg]   -> CLICK",
+      "[div]   -> CLICK",
+      "[button]  APPLY -> CLICK",
+      "[img]  Chris Rock: Selective Outrage -> CLICK",
+      "[button]  WANT TO SEE -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "8b5bb82d-a7cc-4864-a16f-ed089b55f45b",
+        "op": "CLICK",
+        "original_op": "HOVER",
+        "value": ""
+      },
+      {
+        "action_uid": "4703ca2c-dcb8-47c4-b517-1e71d5bdca63",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "daaf91bf-6afe-44c4-bc71-8d3d7f30561c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c8a0567f-38f0-4def-b8fe-9a7508661566",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8203c2a7-4502-4ff2-ac52-1440d2c847ac",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "062a7c7c-40ea-48b3-b27d-7f5c38c344c9",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "385a6a91-88f4-4837-83e1-2f3c5b92b626",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "8e849b85-5acc-4d26-ad5e-d24ad24343df",
+    "trajectory_id": "8e849b85-5acc-4d26-ad5e-d24ad24343df_traj",
+    "source_split": "train",
+    "website": "parking",
+    "domain": "Travel",
+    "subdomain": "Other",
+    "confirmed_task": "Book parking spot for James SMith at Stewart Hotel in New York for 2 hours. The street address is 133 st avenue in New York. Zip code is 10001 and phone number is 888888888. The email address is buckeye.foobar@gmail.com. Employer's name is Gua AB.",
+    "action_reprs": [
+      "[span]  Enter an Address or Venue to find parking -> CLICK",
+      "[span]  Enter an Address or Venue to find parking -> TYPE: stewart hotel",
+      "[option]  STEWART HOTEL\u00a0\u00a0148 W 31st Street, New York Parking... -> CLICK",
+      "[link]  BOOK MONTHLY PARKING -> CLICK",
+      "[textbox]  First Name -> CLICK",
+      "[textbox]  First Name -> TYPE: James",
+      "[textbox]  Last Name -> TYPE: SMith",
+      "[textbox]  Address1 -> TYPE: 133 st avenue",
+      "[textbox]  City Name -> TYPE: New York",
+      "[select]  Alabama -> SELECT: New York",
+      "[textbox]  Zip Code -> TYPE: 10001",
+      "[textbox]  (###) ###-#### -> TYPE: 888888888",
+      "[textbox]  Email Address -> TYPE: buckeye.foobar@gmail.com",
+      "[textbox]  Email Address -> TYPE: buckeye.foobar@gmail.com",
+      "[textbox]  Employer Name -> CLICK",
+      "[textbox]  Employer Name -> TYPE: Gua AB",
+      "[button]  Submit -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "68c92172-9b4e-41fd-866d-129ce1846de4",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2d3970c4-2b0a-43cd-bd19-103d5bcb4dd3",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "stewart hotel"
+      },
+      {
+        "action_uid": "58359ff4-73dd-45ee-b703-026fd4666acf",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b34f0027-2cd9-4f3d-9ef6-3590b99cc795",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "0fd72db4-9850-4454-9f19-30b877e934a2",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "66558d92-b0c7-4478-a66a-dcba598144ef",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "James"
+      },
+      {
+        "action_uid": "b5b40650-0447-4f2a-adbc-15b3faf5babb",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "SMith"
+      },
+      {
+        "action_uid": "308e735f-a080-469b-879b-4c99508ede29",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "133 st avenue"
+      },
+      {
+        "action_uid": "db0dd015-f9d9-4fd6-9c1b-90ee29a84a8e",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "New York"
+      },
+      {
+        "action_uid": "05a173a8-2088-4da9-97e3-f8988811b5b0",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "New York"
+      },
+      {
+        "action_uid": "766c0830-7e36-42fb-8f3e-9473f6322736",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "10001"
+      },
+      {
+        "action_uid": "b583686e-09eb-48e7-9bcb-65faa05d92cf",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "888888888"
+      },
+      {
+        "action_uid": "6fa44411-fae8-427a-a086-b687187d19a6",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "buckeye.foobar@gmail.com"
+      },
+      {
+        "action_uid": "1ca0bcae-dc05-4a2d-bfd0-0838c8284ae3",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "buckeye.foobar@gmail.com"
+      },
+      {
+        "action_uid": "88c687c0-458c-43e5-b265-561b2efdf331",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c6cbec5e-1b4e-4c9b-bbc5-c0d55a1968e8",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Gua AB"
+      },
+      {
+        "action_uid": "13a2c4e4-2eed-443e-9c1b-f9158831bce5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "9ed8cd2a-b0f8-4ccf-9d48-1ddfba4f5e58",
+    "trajectory_id": "9ed8cd2a-b0f8-4ccf-9d48-1ddfba4f5e58_traj",
+    "source_split": "train",
+    "website": "parking",
+    "domain": "Travel",
+    "subdomain": "Other",
+    "confirmed_task": "Find motorcycle parking near Radio City Music Hall.",
+    "action_reprs": [
+      "[span]  Enter an Address or Venue to find parking -> TYPE: radio city music hall",
+      "[em]  Music -> CLICK",
+      "[strong]  Filters -> CLICK",
+      "[checkbox]  Motorcycle Parking -> CLICK",
+      "[link]  View Details ROCKEFELLER CENTER -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "5bf6ca81-46f9-4681-b086-fc23bd8fb027",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "radio city music hall"
+      },
+      {
+        "action_uid": "2bbc5313-c847-4bd1-8db4-1fa235c134ed",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "356098a8-e05f-4dd3-abf5-7740e225140e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "cf712776-65b6-42ad-851a-6f37fcb94caf",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b2723760-8071-47cb-9f11-2d675175cbe7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "a31de393-c6e0-4175-858b-03cdc435d585",
+    "trajectory_id": "a31de393-c6e0-4175-858b-03cdc435d585_traj",
+    "source_split": "train",
+    "website": "parking",
+    "domain": "Travel",
+    "subdomain": "Other",
+    "confirmed_task": "Browse events happening at Madison Square Garden.",
+    "action_reprs": [
+      "[combobox]  \uf002\u00a0 Enter an Address or Venue to find parking -> TYPE: Madison Square Garden",
+      "[em]  Madison -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "4f58be7e-a7f8-4d07-b40c-649e97d4ab84",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Madison Square Garden"
+      },
+      {
+        "action_uid": "edb2c211-bef6-4991-a828-73831abc411d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "a5c1095b-bba1-4029-8b8d-fa5848702827",
+    "trajectory_id": "a5c1095b-bba1-4029-8b8d-fa5848702827_traj",
+    "source_split": "train",
+    "website": "parking",
+    "domain": "Travel",
+    "subdomain": "Other",
+    "confirmed_task": "Find parking in New York City from June 5th to 9th.",
+    "action_reprs": [
+      "[span]  Enter an Address or Venue to find parking -> TYPE: New York City",
+      "[option]  New York City\u00a0\u00a0 City -> CLICK",
+      "[span]  Mar 9 -> CLICK",
+      "[i]   -> CLICK",
+      "[i]   -> CLICK",
+      "[i]   -> CLICK",
+      "[gridcell]  5 -> CLICK",
+      "[span]  Jun 5 -> CLICK",
+      "[gridcell]  9 -> CLICK",
+      "[button]  SEARCH -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "c6b4511e-d878-4799-9d4e-4cbac9de4c48",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "New York City"
+      },
+      {
+        "action_uid": "79c4b306-cc3f-48cf-afe4-16fc9eaaf580",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "0a60f460-55f6-4c2d-a535-36cdf07eeebe",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a020bee4-4ec5-45ca-bb86-98d244b0cee9",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "5a6c1933-af44-41cb-9ae9-b016cee8d3dd",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2a109f4a-c6af-4b5c-a1d0-cacc8a2948c3",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "fa625908-78ca-4882-a85e-528a818b3a77",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "90fb8feb-ae40-4b6a-bf30-fd8be24554ef",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "93b118fc-5d32-48a8-b85c-703862f58792",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ffd31f7b-a7cf-4c8b-9a96-5ca46768637c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "b910229f-6133-452c-a640-6a6ec67b668b",
+    "trajectory_id": "b910229f-6133-452c-a640-6a6ec67b668b_traj",
+    "source_split": "train",
+    "website": "amtrak",
+    "domain": "Travel",
+    "subdomain": "Ground",
+    "confirmed_task": "Get quote for Amtrak vacation for two adults across country while leaving from Chicago on the 22nd of April. It should include Deluxe bedroom. The passenger is named John Mark with email address of johnmark@gmail.com and phone number of 234567890.",
+    "action_reprs": [
+      "[button]  DEALS -> CLICK",
+      "[link]  VACATIONS & RAIL TOURS Train vacation packages thr... -> CLICK",
+      "[img]   -> CLICK",
+      "[link]  Close -> CLICK",
+      "[button]  Instant Quote -> CLICK",
+      "[textbox]  What city would you like to depart from? -> TYPE: Chicago",
+      "[checkbox]  I'm interested in the reverse trip of the selected... -> CLICK",
+      "[checkbox]  Deluxe Bedroom -> CLICK",
+      "[button]  Continue -> CLICK",
+      "[link]  Close -> CLICK",
+      "[textbox]  *Preferred date of travel -> CLICK",
+      "[link]  22 -> CLICK",
+      "[button]  Continue -> CLICK",
+      "[div]  + -> CLICK",
+      "[textbox]  About Your Trip: -> TYPE: Wedding Anniversary",
+      "[button]  Continue -> CLICK",
+      "[textbox]  *First Name -> TYPE: John",
+      "[textbox]  *Last Name -> TYPE: Mark",
+      "[textbox]  *Email Address -> TYPE: Johnmark@gmail.com",
+      "[textbox]  *Phone Number -> TYPE: 234567890",
+      "[label]  I am NOT a Travel Advisor. -> CLICK",
+      "[button]  Submit Quote Request -> HOVER"
+    ],
+    "actions": [
+      {
+        "action_uid": "e6dd4954-4b1d-4f56-8049-0ff9698e56af",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "3f38216e-16cf-4a62-82d5-00bd6a493e5c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "17720df0-0735-42ac-aef7-11de712c9fd0",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b27add92-735a-4aad-a91d-1a8ca179d35e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "96b8805f-69fa-420b-823e-29ff28e471f8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8af6839d-a6e9-4945-ba6a-3cacefda382a",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Chicago"
+      },
+      {
+        "action_uid": "f25623fb-9589-4fb2-984c-2da6871e9a33",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "fed84eba-0361-4753-883e-226494372650",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "04457367-8505-4973-b9af-ecd5eb814182",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a3dff442-0bde-420e-8a86-013bc958198a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6ac8ac5c-31df-4c8f-8093-13f539417457",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2a1a10d0-4641-4d0a-85fd-024a5dbfef2b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2e5cd3b2-dd5b-4055-bd2b-ffdfc93923ee",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "9e7ffe88-9394-4cf5-94be-4de21ded0437",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "be1d8ecf-609b-4a6c-9485-2f010f65c215",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Wedding Anniversary"
+      },
+      {
+        "action_uid": "712b6f48-ec3d-433b-9804-6663aa03c42c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "07e08472-af90-4513-b934-c8893026dfc4",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "John"
+      },
+      {
+        "action_uid": "25595676-125c-4c39-8a05-9d86e9f3b5a4",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Mark"
+      },
+      {
+        "action_uid": "d7aae626-e02f-4f67-a2ed-100574db0121",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Johnmark@gmail.com"
+      },
+      {
+        "action_uid": "7911af81-53d1-402e-acf4-53625f86f726",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "234567890"
+      },
+      {
+        "action_uid": "15235466-cb9e-45a0-baf0-c2715e127ad9",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ebceb903-ecd1-4993-9962-4f21022d163f",
+        "op": "CLICK",
+        "original_op": "HOVER",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "f754d919-2191-464e-a407-0f3da9409081",
+    "trajectory_id": "f754d919-2191-464e-a407-0f3da9409081_traj",
+    "source_split": "train",
+    "website": "amazon",
+    "domain": "Shopping",
+    "subdomain": "General",
+    "confirmed_task": "See today's deals on video games and find the best deal on the lowest-priced mouse.",
+    "action_reprs": [
+      "[button]  Open Menu -> CLICK",
+      "[link]  Movies, Music & Games -> CLICK",
+      "[link]  Video Games -> CLICK",
+      "[link]  Today's Deals -> CLICK",
+      "[link]  PC -> CLICK",
+      "[link]  Accessories -> CLICK",
+      "[link]  Gaming Mice -> CLICK",
+      "[span]  Featured -> CLICK",
+      "[option]  Price: Low to High -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "efd43e42-a268-4260-9e20-0333d7e55f50",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "60755e3c-381c-4066-bf09-930cb0c80bd8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "29e613e0-4f71-4265-8c2c-7ecf158499b4",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "3707f7d8-e3dc-4f98-965d-5b7cbc562c31",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "00c2eafc-0309-4341-9e34-ea1868d3867d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f363d0a7-38a5-49f0-90be-ee433c2505b5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f3cedb20-a49f-49a2-922a-8cfd2a350ec1",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "fe05d80f-01d3-43b5-9568-9204d53f7100",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "3b050be4-1d7e-43f1-a584-1bf2ce238aa0",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "fc21339a-5dc0-489c-b348-2fac79483f76",
+    "trajectory_id": "fc21339a-5dc0-489c-b348-2fac79483f76_traj",
+    "source_split": "train",
+    "website": "amazon",
+    "domain": "Shopping",
+    "subdomain": "General",
+    "confirmed_task": "Find Metformin 1000mg tablet price and details.",
+    "action_reprs": [
+      "[button]  Open Menu -> CLICK",
+      "[link]  See All -> CLICK",
+      "[link]  Amazon Health -> CLICK",
+      "[link]  Amazon Pharmacy -> CLICK",
+      "[span]  Type your medication name -> TYPE: Metformin 1000mg",
+      "[li]  metformin 1000mg tablet -> CLICK",
+      "[img]  Metformin (Generic for Glucophage, Oral Tablet) -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "0e11dda9-eff8-4ab3-a636-a4a0237becdd",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ea3f8f9b-8bcc-4435-8a9c-15a3bc749bcf",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "902efeef-0e70-46fd-8f95-96df32535561",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e506b344-947b-434c-a139-e271b049ba34",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a726af10-e02c-4e08-846c-e5d79fc1f8cd",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Metformin 1000mg"
+      },
+      {
+        "action_uid": "3fbd0200-f2c8-4e2f-8708-d66f70d3a194",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "3118d8f6-34c8-4f6f-80f7-f5d6a50d8d16",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "1c8b3d98-ffcf-42b9-ae0b-73d22d87bad7",
+    "trajectory_id": "1c8b3d98-ffcf-42b9-ae0b-73d22d87bad7_traj",
+    "source_split": "train",
+    "website": "kohls",
+    "domain": "Shopping",
+    "subdomain": "Department",
+    "confirmed_task": "Add a pair of diamond stud earrings to the cart.",
+    "action_reprs": [
+      "[textbox]  Search by keyword or web id -> TYPE: diamond stud earrings",
+      "[span]  diamond stud earrings -> CLICK",
+      "[img]  10k Gold 1 Carat T.W. Black Diamond Stud Earrings -> CLICK",
+      "[button]  Add to Cart -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "71442cf6-a544-45d1-8185-2965fe1171b2",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "diamond stud earrings"
+      },
+      {
+        "action_uid": "00d49134-71de-43ed-9c37-19452b46685e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d5aa4626-0afd-483e-adcb-bb722903ce10",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ec48b801-b658-459c-8b45-d2e9ff9f4238",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "6407babe-fe48-492a-8211-1f22a81b9ac0",
+    "trajectory_id": "6407babe-fe48-492a-8211-1f22a81b9ac0_traj",
+    "source_split": "train",
+    "website": "underarmour",
+    "domain": "Shopping",
+    "subdomain": "Fashion",
+    "confirmed_task": "Find men's running shoes of size 9 with lowest price and add to bag.",
+    "action_reprs": [
+      "[menuitem]  Men -> CLICK",
+      "[link]  Shoes -> CLICK",
+      "[link]  Running -> CLICK",
+      "[div]  Size -> CLICK",
+      "[link]  9 -> CLICK",
+      "[span]  Now Trending -> CLICK",
+      "[li]  Price (Low - High) -> CLICK",
+      "[img]  Men's UA Surge 3 Running Shoes -> CLICK",
+      "[button]  9 -> CLICK",
+      "[button]  Add to Bag -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "52d7c938-aadd-4349-b61b-4db12d69371b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "be6d2fbf-2e18-4a79-ae8d-29fe60b67390",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "bcafc9b0-d8a1-4b7e-8199-431d48b1765e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "7d95104b-2cee-40c4-b43f-914ab0c77461",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "38e3e23c-932b-406a-bd3f-34958395c5c7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "60a95fcf-316e-4431-94e7-50a38e6a421b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "17f036e1-04aa-4a66-828d-e19685efb75c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b5b09d80-00ed-4295-82de-d967b31efaa5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2fedfeba-1361-4546-a638-0b8f70a9f69a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e16871e0-fd0f-46bd-b7e2-46e8908c39ba",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "5092fad7-ff8a-481e-bb0b-fe83590193ce",
+    "trajectory_id": "5092fad7-ff8a-481e-bb0b-fe83590193ce_traj",
+    "source_split": "train",
+    "website": "rottentomatoes",
+    "domain": "Entertainment",
+    "subdomain": "Movie",
+    "confirmed_task": "Show reviews of top critics for lowest rated Tom Hanks work",
+    "action_reprs": [
+      "[textbox]  Search -> TYPE: Tom Hanks",
+      "[p]  Tom Hanks -> CLICK",
+      "[link]  My Life in Ruins (2009) -> CLICK",
+      "[link]  Top Critics (49) -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "206ec9bd-b2fe-4964-8dcb-c593a923ad7d",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Tom Hanks"
+      },
+      {
+        "action_uid": "7dc2e9bb-ea97-4cc9-8824-aaf9e70f74d6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "700fb498-5bab-4e61-9e6b-6f3679b2ca2d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b802897f-2c52-42af-b317-321de287b5ab",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "14b5885e-5454-465f-92bf-d8f7315c4a46",
+    "trajectory_id": "14b5885e-5454-465f-92bf-d8f7315c4a46_traj",
+    "source_split": "train",
+    "website": "us.megabus",
+    "domain": "Travel",
+    "subdomain": "Ground",
+    "confirmed_task": "Find a ticket from Abbotsford to Sheboygan on March 26, 2023.",
+    "action_reprs": [
+      "[button]  Explore\ue911 -> CLICK",
+      "[link]  Route map -> CLICK",
+      "[textbox]  Pick an origin Pick a destination -> TYPE: Abbotsford",
+      "[span]  Abbotsford, WI -> CLICK",
+      "[textbox]  Enter a town, city or zipcode -> TYPE: Sheboygan",
+      "[span]  Sheboygan, WI -> CLICK",
+      "[button]  Search -> CLICK",
+      "[input]   -> CLICK",
+      "[gridcell]  March 26, 2023 -> CLICK",
+      "[button]  Find tickets -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "551a50ba-12b7-47fe-843b-b62606544767",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f1a4664b-00c9-4016-8c61-d86520080cc7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "197af70a-27ca-4bb0-bbfd-8374dcbca041",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Abbotsford"
+      },
+      {
+        "action_uid": "dfd559fc-eb25-4cda-9a91-8c60b0bbce36",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f9d90439-ae28-4177-8b1a-a13aba005f33",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Sheboygan"
+      },
+      {
+        "action_uid": "8810aa59-ef59-41eb-9dd2-4f79b1c8262f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "220eebf1-381e-490c-8f48-c96d8228e83c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a8277574-07e0-411e-8787-81cb20501c1c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "7ad31fb5-8326-41d3-b6d1-d7de45193fc1",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e1d11f3d-bddc-40e4-9b38-e2ab641223d8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "1538e37b-9c33-48b0-b10e-662e192ad53a",
+    "trajectory_id": "1538e37b-9c33-48b0-b10e-662e192ad53a_traj",
+    "source_split": "train",
+    "website": "us.megabus",
+    "domain": "Travel",
+    "subdomain": "Ground",
+    "confirmed_task": "Find bus stops in Alanson, MI",
+    "action_reprs": [
+      "[button]  Explore\ue911 -> CLICK",
+      "[link]  Bus stops -> CLICK",
+      "[button]  Alanson, MI \ue911 -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "3be9ae7f-a70b-4318-8fb6-4ad2c22b8f3f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "455a4731-6e47-4746-9c56-df4a0cc128eb",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "3a3ea0a2-ac4f-4852-9eef-06f64dcc0b45",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "21e5c264-df85-4055-a566-ecb65cdd8c63",
+    "trajectory_id": "21e5c264-df85-4055-a566-ecb65cdd8c63_traj",
+    "source_split": "train",
+    "website": "us.megabus",
+    "domain": "Travel",
+    "subdomain": "Ground",
+    "confirmed_task": "Add to my basket tickets for 3 people from New York to Alfred.",
+    "action_reprs": [
+      "[textbox]  From (type text or use the arrow keys) -> TYPE: New York",
+      "[span]  New York, NY -> CLICK",
+      "[textbox]  To (type text or use the arrow keys) -> TYPE: Alfred",
+      "[span]  Alfred, NY -> CLICK",
+      "[textbox]  Pick a date -> CLICK",
+      "[gridcell]  March 31, 2023 -> CLICK",
+      "[span]   -> CLICK",
+      "[span]   -> CLICK",
+      "[button]  Find tickets -> CLICK",
+      "[button]  Add to basket -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "746fec9f-bf5f-49eb-a9b2-0c96916e881d",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "New York"
+      },
+      {
+        "action_uid": "fc871d4d-aa26-42a3-a595-7ec4b6c676ed",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6c70afce-e87a-4d1b-8d7f-f99589b2b407",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Alfred"
+      },
+      {
+        "action_uid": "2fd38569-ac81-4db5-8534-ac8b52302caf",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "08743486-379f-4213-a796-2f2ec65df153",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8acab6b2-6b28-45c9-84b2-0c56d4964684",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f60f9f16-8348-47e1-b2ad-67b88dd5fac7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e909e5cc-b764-4ebc-9e91-b87b5863879d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "4c93db0b-982d-4815-933d-10283c2fb380",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ee8707f3-64d9-4ca3-b9d7-12a71897b462",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "8e721b00-f406-449b-9885-0267b47ecfdb",
+    "trajectory_id": "8e721b00-f406-449b-9885-0267b47ecfdb_traj",
+    "source_split": "train",
+    "website": "carmax",
+    "domain": "Shopping",
+    "subdomain": "Auto",
+    "confirmed_task": "Search for used Jaguar XFs with no black exterior color and save the search as Jaguar  to get a notification daily.",
+    "action_reprs": [
+      "[searchbox]  Search make, model, or keyword -> TYPE: jaguar xf",
+      "[link]  Jaguar XF -> CLICK",
+      "[button]  Advanced Search -> CLICK",
+      "[textbox]  Ex. Black exterior -> TYPE: black",
+      "[button]  Black (Exterior Color) -> CLICK",
+      "[button]  SAVE SEARCH -> CLICK",
+      "[textbox]  Custom name your search -> TYPE: Jaguar",
+      "[button]  CONTINUE -> CLICK",
+      "[radio]  Daily summary -> CLICK",
+      "[button]  CONTINUE -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "74f2b513-2ee2-469b-a2de-837034b739e8",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "jaguar xf"
+      },
+      {
+        "action_uid": "6d12a2b4-31a8-4534-97a2-6c84c75d3fad",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b1b6ed4f-e03d-4b9f-8c20-2487956712bd",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6777b49e-bd42-42a4-83c8-6924d950ddec",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "black"
+      },
+      {
+        "action_uid": "d129b23b-eec3-4afa-9787-6e2e06042e33",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "cd58814d-9500-4922-a7f4-416a19ffcc34",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ca98286b-ed03-4f7b-be6c-f1da235ef72c",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Jaguar"
+      },
+      {
+        "action_uid": "65871880-9edf-4376-ba5a-724665a1454b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "abb7ad2b-5603-4bd9-995c-e98a5ad82e57",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a1264e25-26bf-49e0-b1f1-9efe9e8a1adb",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "f27bb47e-3aba-439a-b98a-2cf9b0e25e9c",
+    "trajectory_id": "f27bb47e-3aba-439a-b98a-2cf9b0e25e9c_traj",
+    "source_split": "train",
+    "website": "viator",
+    "domain": "Travel",
+    "subdomain": "Other",
+    "confirmed_task": "Browse Tokyo's best tea related attractions in the morning.",
+    "action_reprs": [
+      "[span]  Explore the World -> HOVER",
+      "[span]  Tokyo -> CLICK",
+      "[link]  Food & Drink -> CLICK",
+      "[link]  Coffee & Tea -> CLICK",
+      "[label]  6am\u201412pm -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "cfdab859-8ea1-4145-a761-ca9ffa100107",
+        "op": "CLICK",
+        "original_op": "HOVER",
+        "value": ""
+      },
+      {
+        "action_uid": "c9e53d13-c6fc-4af4-b8c4-45ea969dd04a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b1062855-4c2b-4283-9b44-d7dc68373578",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "46828258-db63-45df-b5d6-3807c8d23840",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e0785f0c-5b78-480e-96b3-ef282ad0f38e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "5a15ea92-571d-4a45-ad18-5b4eddbc70a6",
+    "trajectory_id": "5a15ea92-571d-4a45-ad18-5b4eddbc70a6_traj",
+    "source_split": "train",
+    "website": "kohls",
+    "domain": "Shopping",
+    "subdomain": "Department",
+    "confirmed_task": "Get the lowest priced plus size one piece active swimsuit in color black.",
+    "action_reprs": [
+      "[link]  Shop by Category -> CLICK",
+      "[link]  Women -> HOVER",
+      "[link]  Swimwear -> CLICK",
+      "[link]  Women's Plus -> CLICK",
+      "[div]  Color -> CLICK",
+      "[link]  Black (294) -> CLICK",
+      "[link]  Sort by: Featured -> CLICK",
+      "[link]  Price Low-High -> CLICK",
+      "[div]  Occasion -> CLICK",
+      "[link]  Active (6) -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "614dad39-55ae-45d7-8e8b-f51b7daa07fc",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f8928c84-d27a-42db-a6d1-dcd1f656d6ab",
+        "op": "CLICK",
+        "original_op": "HOVER",
+        "value": ""
+      },
+      {
+        "action_uid": "56dff79d-4441-4435-a096-71da4f343a09",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "9cbe4f75-eb82-4ae9-a013-d12eea58f7a6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "1f9d19aa-539e-4370-9a67-ad5d5c71fd9e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c8d98ede-94ff-4686-80c4-d63369045443",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "3dd8bf82-b783-4ede-b42a-0b632c8cb365",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "12632bc3-c1f3-4dc7-8320-0923fcbe924b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f9801b57-8f15-4dab-9e72-aa767e19f1c1",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "1c231670-9ff8-4b9e-97ca-54566a5af398",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "1860601a-faef-4dba-8cbb-807ea8434dca",
+    "trajectory_id": "1860601a-faef-4dba-8cbb-807ea8434dca_traj",
+    "source_split": "train",
+    "website": "delta",
+    "domain": "Travel",
+    "subdomain": "Airlines",
+    "confirmed_task": "Check for travel requirements when travelling from New York to Tokyo as US citizen.",
+    "action_reprs": [
+      "[tab]  Travel Info -> CLICK",
+      "[link]  Travel Planning Center -> CLICK",
+      "[button]  Find Your Destination -> CLICK",
+      "[link]  Explore Destinations & Travel Requirements -> CLICK",
+      "[combobox]  Origin -> CLICK",
+      "[combobox]  Origin -> TYPE: New York",
+      "[p]  New York City -> CLICK",
+      "[combobox]  Destination -> CLICK",
+      "[combobox]  Destination -> TYPE: Tokyo",
+      "[span]  (HND) -> CLICK",
+      "[combobox]  Nationality -> CLICK",
+      "[option]  United States of America (USA) -> CLICK",
+      "[combobox]  Vaccination status Vaccination status -> CLICK",
+      "[option]  Fully vaccinated -> CLICK",
+      "[button]  Search -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "d7821dba-fdc5-4738-ae2a-d5bf94da0dcc",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "74a7bdfb-8e01-47ae-8251-2c1ee845131e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a7c0ac26-f51d-45fc-969f-73a22770dfc0",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6530ec2d-af29-4aa3-87d9-1459e0e0aab5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a6a47a5f-af4c-4828-877e-98c2bec76ac6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "fa09573f-3fe8-4781-878c-595e27b1289d",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "New York"
+      },
+      {
+        "action_uid": "894a3e88-d3f2-417d-b464-ce6f3086c9cd",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "864d3cfb-f813-4b7b-ad22-bcf37afeb3c2",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "465ea3dd-835f-4dba-b0fb-7d1092c13c1c",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Tokyo"
+      },
+      {
+        "action_uid": "31f0c71f-7a90-4fa6-beac-319af1442002",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "3f7b29b7-0875-4dc9-8d95-f024555edf4e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a87b377d-8822-4c90-8f14-11e689d3aacf",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "dd7801cd-f2c0-4d87-a7fa-cc6d80723a61",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2d372e31-24cb-41f2-8bfe-95836f933805",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f31dd533-86bd-4d07-af19-fa8d0f61bb64",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "5e47dc3e-2a4a-4273-871d-dfdb33b091d5",
+    "trajectory_id": "5e47dc3e-2a4a-4273-871d-dfdb33b091d5_traj",
+    "source_split": "train",
+    "website": "underarmour",
+    "domain": "Shopping",
+    "subdomain": "Fashion",
+    "confirmed_task": "Filter women's sports bras that are purple  with high support that are small size.",
+    "action_reprs": [
+      "[menuitem]  Women -> CLICK",
+      "[link]  Sports Bras -> CLICK",
+      "[div]  Size -> CLICK",
+      "[link]  S -> CLICK",
+      "[div]  Filter -> CLICK",
+      "[RootWebArea]  Women's Sports Bras | Under Armour -> CLICK",
+      "[button]  Show more -> CLICK",
+      "[div]  Color -> CLICK",
+      "[link]  Refine by color: Purple -> CLICK",
+      "[div]  Support Level -> CLICK",
+      "[link]  High Support -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "aff3dec2-7e47-483f-b156-9ff640444b30",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a939b3d8-1cd7-4b45-9cd1-3ef535f86ff7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d1079663-66c1-47c7-a0fa-6f0420a99469",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2cc502de-3f64-4412-9dfa-d6311cbc490a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "de127ffa-a357-431b-9f94-8ad89dfbe7c4",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a5a099e0-e771-43a2-8ca6-d6a21517e402",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "7ace8414-2b72-436a-84f4-f81ce2d5ecc0",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "5081e4ab-c126-42d1-a018-1794aa0466d0",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "7e967714-530e-4ee3-aab8-c8943a08b141",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2e501862-ee92-4af0-8eb0-7594690edef9",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "89271800-5603-4e29-92cc-dd53f66ecbcc",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "1943febc-0635-4124-871c-578c4d9f5a44",
+    "trajectory_id": "1943febc-0635-4124-871c-578c4d9f5a44_traj",
+    "source_split": "train",
+    "website": "ultimate-guitar",
+    "domain": "Entertainment",
+    "subdomain": "Music",
+    "confirmed_task": "Find the most popular guitar tab for Absolute Beginners.",
+    "action_reprs": [
+      "[link]  Tabs -> CLICK",
+      "[svg]   -> CLICK",
+      "[link]  Most popular of all time -> CLICK",
+      "[link]  Absolute Beginner 91,138 -> CLICK",
+      "[link]  You Belong With Me (ver\u00a02) -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "62f82d6a-0799-49e5-9b06-3de4294ea2e6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f28e8ac9-a664-4f02-8335-7ed18c63d70d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a0acf9c4-877d-41bf-b856-126033533bdb",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "49b6818c-3f34-49f1-ba58-9cba952646ee",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "13946ef7-7b91-478e-adc6-d3ef4f6a8270",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "1a35becb-e07b-4235-8cd3-fc2a29f8dd6f",
+    "trajectory_id": "1a35becb-e07b-4235-8cd3-fc2a29f8dd6f_traj",
+    "source_split": "train",
+    "website": "ultimate-guitar",
+    "domain": "Entertainment",
+    "subdomain": "Music",
+    "confirmed_task": "Add the most most popular of all time tab to a playlist",
+    "action_reprs": [
+      "[link]  Tabs -> CLICK",
+      "[link]  Tab -> CLICK",
+      "[svg]   -> CLICK",
+      "[link]  Most popular of all time -> CLICK",
+      "[link]  Stairway To Heaven -> CLICK",
+      "[button]   ADD TO PLAYLIST -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "e4a9cbd4-088d-4619-bea8-f2012f168a59",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f3309336-f65d-423d-943f-296c3d7a3b97",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "fb31ef47-5c1e-4550-8945-cd2ef45e026f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "dc3b0597-0b0b-44a3-922a-df69bcb0df24",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "31d78d33-b4df-433c-8033-62c738f1a8a1",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "1cda2d0c-fc85-46e2-9352-deea3a3d9d8f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "904bd858-1c40-4d22-9a5b-e2974c3b5a7e",
+    "trajectory_id": "904bd858-1c40-4d22-9a5b-e2974c3b5a7e_traj",
+    "source_split": "train",
+    "website": "ticketcenter",
+    "domain": "Entertainment",
+    "subdomain": "Event",
+    "confirmed_task": "Find the most expensive ticket for New York Knicks game on April 9",
+    "action_reprs": [
+      "[textbox]  Search for artists, teams or venues... -> CLICK",
+      "[textbox]  Search for artists, teams or venues... -> TYPE: New york knicks",
+      "[option]  New York Knicks -> CLICK",
+      "[link]  TICKETS -> CLICK",
+      "[span]   -> CLICK",
+      "[div]  Price - High to Low -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "a68ce23a-54c0-4a20-bdf2-c64c60b7db33",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "bc05be9f-e46b-4654-83c0-862c601f263f",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "New york knicks"
+      },
+      {
+        "action_uid": "e003a56c-dc49-40d5-bcdb-aa86ca0d7b66",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "1245d53c-a9f4-4a43-b386-dfbdf4e4aed6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b6566fc9-1729-454d-9680-e4a2962004f5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "92044c3e-58bd-45b2-b161-6eea8af0c53f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "9b18e5e4-4873-49bf-b422-c3f5bc5d1f33",
+    "trajectory_id": "9b18e5e4-4873-49bf-b422-c3f5bc5d1f33_traj",
+    "source_split": "train",
+    "website": "ticketcenter",
+    "domain": "Entertainment",
+    "subdomain": "Event",
+    "confirmed_task": "Book a WWE ticket for price range between $50 to $100.",
+    "action_reprs": [
+      "[link]  WWE Tickets -> CLICK",
+      "[link]  TICKETS -> CLICK",
+      "[p]  $41 - $1,255 -> CLICK",
+      "[input]   -> TYPE: 50",
+      "[input]   -> TYPE: 100",
+      "[button]  Done -> CLICK",
+      "[button]  $50/ea -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "66efeee7-26da-4ccc-a8eb-1cb6b87f7b7b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a77dd692-2148-4a62-8cf9-b62a855abf40",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "0cd2cdd2-052b-42c7-9e1d-f0bc04e54244",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "eb8ba29f-90ce-4615-8e5b-92f140b46bf4",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "50"
+      },
+      {
+        "action_uid": "d8ebd628-85a8-41ba-a20b-8d10222703e6",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "100"
+      },
+      {
+        "action_uid": "4a07dc77-6047-4b53-8808-a53fbd47e6a3",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "af1b2580-5ce6-48af-a29f-8d9152414487",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "930803d7-4032-4144-89a2-e44f3c5c9ccf",
+    "trajectory_id": "930803d7-4032-4144-89a2-e44f3c5c9ccf_traj",
+    "source_split": "train",
+    "website": "sixflags",
+    "domain": "Travel",
+    "subdomain": "Other",
+    "confirmed_task": "Buy tickets for a group at Hurricane harbor Phoenix on April 22",
+    "action_reprs": [
+      "[button]  Browse the Parks Below -> CLICK",
+      "[span]  Hurricane Harbor Phoenix -> CLICK",
+      "[button]  Go! -> CLICK",
+      "[link]  Groups \ue92e -> CLICK",
+      "[span]  Buy Now -> CLICK",
+      "[button]  April 22, 2023 -> CLICK",
+      "[button]  Buy Now -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "bd9a4601-4e54-41e7-ba10-2c10b0d6f156",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "4d3c65b7-8e9c-4bb7-9347-708aaba58996",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "9af5e2bf-542b-482b-b479-2cdead789a25",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "29445a41-8ff2-4bff-b2fa-3f892a59bbf3",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "25c59d1d-3e28-490b-a832-aa15ee2497d3",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d1772f3d-086d-4f30-b37f-eed1de2786aa",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2bfdc2d3-8e60-435d-9e21-c63207b3c90d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "a11022ab-f733-4295-a2f2-0da19cccc1b4",
+    "trajectory_id": "a11022ab-f733-4295-a2f2-0da19cccc1b4_traj",
+    "source_split": "train",
+    "website": "sixflags",
+    "domain": "Travel",
+    "subdomain": "Other",
+    "confirmed_task": "Sign up for emails using the name Dick Smith and the email smith@gmail.com, select Six Flags Magic Mountain as the Park of Preference,",
+    "action_reprs": [
+      "[textbox]  First Name -> TYPE: Dick",
+      "[textbox]  Last Name -> TYPE: Smith",
+      "[textbox]  Email -> TYPE: smith@gmail.com",
+      "[combobox]  Park of Preference -> SELECT: Six Flags Magic Mountain / Los Angeles, CA",
+      "[button]  Sign Up -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "4af813e6-fc10-468a-bc8e-cba17f545e06",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Dick"
+      },
+      {
+        "action_uid": "4463379b-ecb8-4fd3-a871-b3ba26ce27bc",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Smith"
+      },
+      {
+        "action_uid": "6ba16278-a7a3-4e06-8426-356b05e3219c",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "smith@gmail.com"
+      },
+      {
+        "action_uid": "c1fda10f-e5ef-47f2-852f-a6385a2ed99f",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "Six Flags Magic Mountain / Los Angeles, CA"
+      },
+      {
+        "action_uid": "a504d03f-205a-4905-8823-9493469d0034",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "d6dd19a2-c57e-4e4d-b7e1-8919a86f1157",
+    "trajectory_id": "d6dd19a2-c57e-4e4d-b7e1-8919a86f1157_traj",
+    "source_split": "train",
+    "website": "viator",
+    "domain": "Travel",
+    "subdomain": "Other",
+    "confirmed_task": "Book the cheapest likely to sell out activity in Los Angeles on April 2",
+    "action_reprs": [
+      "[textbox]  Where to? -> TYPE: Los Angeles",
+      "[b]  Los Angeles -> CLICK",
+      "[button]  Next -> CLICK",
+      "[gridcell]  Sun Apr 02 2023 -> CLICK",
+      "[circle]   -> CLICK",
+      "[link]  Likely To Sell Out -> CLICK",
+      "[svg]   -> CLICK",
+      "[span]  Price (Low to High) -> CLICK",
+      "[link]  Hollywood Sign Hiking Tour to Griffith Observatory -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "ecd96a58-af68-400d-bac5-e637de08d916",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Los Angeles"
+      },
+      {
+        "action_uid": "6e7e019b-e6dc-486a-9697-74aa496d4009",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "87e9c2d8-c6f0-42c3-8bfb-f1456f4699d6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "7412202e-0c5f-47b7-a72f-0570cd883473",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "68740d21-ba3e-43a1-9753-6a5996ae1fda",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "db2eac70-945f-4c8f-aaac-b8ec140bc870",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "bfe8743f-3984-4cf2-a62a-79a22ff7ef8c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "34028620-ebde-4b2d-8709-4c162b03e46d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f4a04bcc-0ce6-4a2c-a076-b96a65d0a7e6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "70b3ef5b-d900-44cf-9b62-9ecece97954c",
+    "trajectory_id": "70b3ef5b-d900-44cf-9b62-9ecece97954c_traj",
+    "source_split": "train",
+    "website": "rei",
+    "domain": "Shopping",
+    "subdomain": "Speciality",
+    "confirmed_task": "Find climbing gear and sort the results by price high to low.",
+    "action_reprs": [
+      "[button]  Climb -> CLICK",
+      "[button]  Climb -> CLICK",
+      "[link]  Explore Climb -> CLICK",
+      "[link]  Shop all climbing gear -> CLICK",
+      "[combobox]  Sort By -> SELECT: Price: High - Low"
+    ],
+    "actions": [
+      {
+        "action_uid": "1387e66f-88ee-4ac8-8cc8-363de89dd7bc",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8b782e73-72f5-42e8-89e0-197104dfbedd",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a134016b-dd49-4e6d-9c0a-f2a9c11f25f7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "91a0d4fe-3524-448a-995f-8c4d570884ec",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2cde0581-1919-4200-9358-c3d15bd24028",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "Price  High - Low"
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "987b25a8-05af-4b18-bd5b-7e2ccba5fb1e",
+    "trajectory_id": "987b25a8-05af-4b18-bd5b-7e2ccba5fb1e_traj",
+    "source_split": "train",
+    "website": "newegg",
+    "domain": "Shopping",
+    "subdomain": "Digital",
+    "confirmed_task": "Add Western Digital internal SSD with 1TB storage and 8GB Ram DDR to the cart.",
+    "action_reprs": [
+      "[searchbox]  Search Site -> CLICK",
+      "[searchbox]  Search Site -> TYPE: Western Digital internal SSD 1 TB",
+      "[button]  \uf002 -> CLICK",
+      "[link]  Western Digital WD_BLACK SN770 M.2 2280 1TB PCIe G... -> CLICK",
+      "[button]  ADD TO CART \uf0da -> CLICK",
+      "[button]  NO, THANKS -> CLICK",
+      "[button]  Close -> CLICK",
+      "[searchbox]  Search Site -> TYPE: 8GB Ram",
+      "[button]  \uf002 -> CLICK",
+      "[img]  8GB (1x8GB) DDR3L 1600 (PC3L-12800) Desktop Memory... -> CLICK",
+      "[button]  ADD TO CART \uf0da -> CLICK",
+      "[button]  NO, THANKS -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "d59c93cf-f6a3-40df-b51f-40934918fa67",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "fb2cfc47-01cf-4aed-96aa-7632b3d5e2e3",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Western Digital internal SSD 1 TB"
+      },
+      {
+        "action_uid": "9981ef68-97b3-4388-906b-0b285e5b74f2",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c0f7e9d2-0b58-43a7-bdb5-3aab72d5ffb7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "285f5467-2cad-4f8d-8b01-8f90a80e3cce",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d26c73be-ce7d-42a2-8980-4bb23f15a0ce",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "dc8ac449-800a-44f0-848e-a5bcaa9ec631",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "73a60d20-1d3e-4b8a-bbea-d906c3a1faeb",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "8GB Ram"
+      },
+      {
+        "action_uid": "4c77cf02-5428-4f24-86c3-dd73dee21f63",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "846f8e5c-0ed6-4857-8e54-b61d65a4f687",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d68603fa-5c88-4cc0-a276-31fbc5052bd6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a3d23bf6-5aa6-4245-8bb3-0c4d05470750",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "de1045f4-14ce-4de9-9aa8-601315b73b0e",
+    "trajectory_id": "de1045f4-14ce-4de9-9aa8-601315b73b0e_traj",
+    "source_split": "train",
+    "website": "imdb",
+    "domain": "Entertainment",
+    "subdomain": "Movie",
+    "confirmed_task": "Get the most popular documentary tv series sorted by IMDB rating, see the details of the top result.",
+    "action_reprs": [
+      "[button]  Open Navigation Drawer -> CLICK",
+      "[span]  Browse TV Shows by Genre -> CLICK",
+      "[link]  Documentary -> CLICK",
+      "[link]  User Rating -> CLICK",
+      "[link]  Going Postal -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "e63bd0c5-1f40-461f-a792-dfe15f095b29",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2b413c09-655e-41ba-8f2b-fd66aba87bb1",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "50f46316-29db-42fb-9b52-320a814c5355",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "413d5059-2958-4244-883e-b5ec9474badf",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6dd86b17-3d5a-408f-9230-2a4683dde8cf",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "f2f531ff-94d5-4320-8594-7ae5d3a52af5",
+    "trajectory_id": "f2f531ff-94d5-4320-8594-7ae5d3a52af5_traj",
+    "source_split": "train",
+    "website": "imdb",
+    "domain": "Entertainment",
+    "subdomain": "Movie",
+    "confirmed_task": "Show top 50 Movies and TV shows by Sci fi genre.",
+    "action_reprs": [
+      "[path]   -> CLICK",
+      "[span]  Top 250 Movies -> CLICK",
+      "[link]  Sci-Fi -> CLICK",
+      "[button]  Open Navigation Drawer -> CLICK",
+      "[span]  Top 250 TV Shows -> CLICK",
+      "[link]  Sci-Fi -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "2861d75f-d51e-42a9-bf74-e1e0fc01fda6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "34e7f545-430f-4557-84b4-ec4cfea0876d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "adba973c-6ed5-4579-99ba-918691da9c24",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "197bb442-771f-4fff-84e1-cef8b3978bd3",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "03e8e495-0e91-49be-902c-3a0f659ec428",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b8cb066b-326c-44a4-bb54-e12f4ba8f863",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "39b037ac-0a11-4b05-8919-b4f9863fd0cd",
+    "trajectory_id": "39b037ac-0a11-4b05-8919-b4f9863fd0cd_traj",
+    "source_split": "train",
+    "website": "ign",
+    "domain": "Entertainment",
+    "subdomain": "Game",
+    "confirmed_task": "Show review of Prometheus movie.",
+    "action_reprs": [
+      "[path]   -> CLICK",
+      "[tab]  MOVIES -> CLICK",
+      "[searchbox]  Search -> TYPE: Prometheus",
+      "[div]  Prometheus -> CLICK",
+      "[tab]  Reviews -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "f4a3db2b-6081-40ff-9efd-57848cd9bfd0",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b05415f3-ea39-499f-b8d0-25e061aa16e3",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a0c205cb-1a8c-44e3-af38-ff210c95571e",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Prometheus"
+      },
+      {
+        "action_uid": "885432a5-3a1f-40a1-9c83-3e2222987162",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "3df37d9c-f0b4-46a2-b7ea-aa19650153f2",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "3be7acd4-c8c4-4e0d-b2b6-f82a4e17de8c",
+    "trajectory_id": "3be7acd4-c8c4-4e0d-b2b6-f82a4e17de8c_traj",
+    "source_split": "train",
+    "website": "ign",
+    "domain": "Entertainment",
+    "subdomain": "Game",
+    "confirmed_task": "Open the Resident evil 4 game guide.",
+    "action_reprs": [
+      "[path]   -> CLICK",
+      "[link]  Guides -> CLICK",
+      "[button]  Open Guide -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "f321c6df-c46a-4b3c-85f6-255e8db91d65",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ab7e03f5-52b6-4226-aa07-97b50ddf55cf",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "62ad40a1-3e77-4bb7-bced-d863ee082eb0",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "14a4e19d-d82d-45dd-b4f0-6b60ed87d085",
+    "trajectory_id": "14a4e19d-d82d-45dd-b4f0-6b60ed87d085_traj",
+    "source_split": "train",
+    "website": "instacart",
+    "domain": "Shopping",
+    "subdomain": "General",
+    "confirmed_task": "Find nearest Sprouts Farmers Market and add two fruits and one sauce from the deals.",
+    "action_reprs": [
+      "[img]   -> CLICK",
+      "[link]  Deals -> CLICK",
+      "[div]  Add -> CLICK",
+      "[span]  Add -> CLICK",
+      "[link]  View More -> CLICK",
+      "[div]  Add -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "77c307df-b1ab-41f3-b616-1e19acd5cd98",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e63aff02-4d6c-4289-b897-91262275d712",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2da19bbe-dd62-482e-bbf3-24f0ecc52e72",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "62cf5905-dba2-4936-abd9-9b6e872672d5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "cc1747c1-6897-475a-a414-30da991bc3fd",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "9d995e9a-9209-44b2-995e-c789e80640fe",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "15a0ffe5-8462-4a8e-8938-91b05a40756f",
+    "trajectory_id": "15a0ffe5-8462-4a8e-8938-91b05a40756f_traj",
+    "source_split": "train",
+    "website": "instacart",
+    "domain": "Shopping",
+    "subdomain": "General",
+    "confirmed_task": "Add a new address to the account. The address is 2983 Marietta Street,  APT 2. Business name is Buck.",
+    "action_reprs": [
+      "[span]  171 2nd street -> CLICK",
+      "[textbox]  Add a new address -> TYPE: 2983 Marietta Street",
+      "[span]  2983 Marietta Street -> CLICK",
+      "[textbox]  Apt, floor, suite, etc (optional) -> TYPE: 2",
+      "[textbox]  Business name (optional) -> TYPE: Buck",
+      "[button]  Save Address -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "ec31e954-a50a-420c-8399-467d237b647d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "96779cdb-a229-44fd-848a-8522a105e38d",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "2983 Marietta Street"
+      },
+      {
+        "action_uid": "c8c86f76-7509-46a1-bb49-dc9b4b8a0664",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "1d564585-6725-42ae-ab43-5203aab4ae39",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "2"
+      },
+      {
+        "action_uid": "2f2426db-0cca-4e67-a6b0-333de7a4b037",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Buck"
+      },
+      {
+        "action_uid": "08c1d250-f956-4e8d-90dc-d9ae433f1a12",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "277bdab6-e924-45dd-ba26-d659d864d671",
+    "trajectory_id": "277bdab6-e924-45dd-ba26-d659d864d671_traj",
+    "source_split": "train",
+    "website": "instacart",
+    "domain": "Shopping",
+    "subdomain": "General",
+    "confirmed_task": "Add 2 different flavor dog treats and one dog food with lowest price to cart from Safeway.",
+    "action_reprs": [
+      "[textbox]  Search -> TYPE: dog treats",
+      "[span]  dog treats -> CLICK",
+      "[span]  View all 20+ items -> CLICK",
+      "[span]  Best match -> CLICK",
+      "[option]  Price: lowest first -> CLICK",
+      "[span]  Add -> CLICK",
+      "[span]  Add -> CLICK",
+      "[button]  Load more -> CLICK",
+      "[span]  Add to cart -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "b7d8a0ab-d6fb-4d63-aef6-6a71b72079ab",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "dog treats"
+      },
+      {
+        "action_uid": "c1a76ce4-fd5d-4879-8605-31cbeee8f12a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a69f9ab4-9419-40c0-a22b-d1bad1fd7c55",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b716dec6-b13d-4e4c-bfbb-96a9fbd930ca",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e7a69198-f985-4899-b721-e53fc38e8dde",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "9cad183e-9be2-406a-9b05-f4373367e1a2",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "86fafa00-08fd-4d15-9ca1-88658c080ec1",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "81fd0300-9ad3-40fa-bec3-798fec6e088d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "0b62a0d8-1317-4f8f-b64c-d11d7f14b218",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "c82bd6d6-6f08-4f1d-aeef-351c86694bbc",
+    "trajectory_id": "c82bd6d6-6f08-4f1d-aeef-351c86694bbc_traj",
+    "source_split": "train",
+    "website": "redbox",
+    "domain": "Entertainment",
+    "subdomain": "Movie",
+    "confirmed_task": "Find the newest movies for rent  in the Redbox kiosk at any Winn Dixie in Daytona Beach.",
+    "action_reprs": [
+      "[button]  Navigate to Find a kiosk nearby -> CLICK",
+      "[textbox]  City or ZIP Code -> TYPE: Daytona",
+      "[button]  select to search for a kiosk using city or zipcode -> CLICK",
+      "[button]  select to browse a kiosk -> CLICK",
+      "[button]  Show Filters -> CLICK",
+      "[button]  Filter by rent -> CLICK",
+      "[span]  Hide Filters -> CLICK",
+      "[path]   -> CLICK",
+      "[combobox]  sortBy -> SELECT: Newest"
+    ],
+    "actions": [
+      {
+        "action_uid": "48fb0147-627c-4f08-beb2-1466c609b79c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "bb39f777-043d-4f12-9973-afd6bef8c9b5",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Daytona"
+      },
+      {
+        "action_uid": "7b711ada-4f5d-41ae-b080-8f23e4d171fa",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ac505227-fbab-4016-b968-22a429f2788c",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c2addf44-300d-4f7e-9bec-b2b5471e0d2d",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "19e8ffd0-e981-4b9e-8eac-a752dabc1b72",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d0bc46ae-42b7-4510-949b-2c0c747f8ac3",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2f83759d-67be-41ac-994f-44bd60b9d1ef",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8e5642a1-2b18-401e-ae2d-1addfb70704d",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "Newest"
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "754c8c29-92b6-4af1-9594-f9d3da37b951",
+    "trajectory_id": "754c8c29-92b6-4af1-9594-f9d3da37b951_traj",
+    "source_split": "train",
+    "website": "booking",
+    "domain": "Travel",
+    "subdomain": "General",
+    "confirmed_task": "Find a 3-star rated hostel with balcony and free cancellation option in Udipi, Karnataka for one person under 50 dollars from June 15 to 20, free wifi is compulsory.",
+    "action_reprs": [
+      "[link]  Hostels -> CLICK",
+      "[searchbox]  Please type your destination -> TYPE: udupi",
+      "[option]  Udupi Karnataka,\u00a0India -> CLICK",
+      "[span]  25 -> CLICK",
+      "[svg]   -> CLICK",
+      "[checkbox]  15 June 2023 -> CLICK",
+      "[checkbox]  20 June 2023 -> CLICK",
+      "[span]  2 adults -> CLICK",
+      "[button]  - -> CLICK",
+      "[button]  Search -> CLICK",
+      "[span]   -> CLICK",
+      "[span]   -> CLICK",
+      "[span]   -> CLICK",
+      "[span]   -> CLICK",
+      "[button]  Show all 25 -> CLICK",
+      "[span]   -> CLICK",
+      "[button]  Sort by:Top picks for solo travellers -> CLICK",
+      "[button]  Price (lowest first) -> CLICK",
+      "[link]  See availability -> CLICK",
+      "[button]  Reserve -> CLICK",
+      "[button]  I'll\u00a0reserve -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "892aaf63-9463-482a-95b8-2a7e145c429f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e4ab6d47-920a-4d58-98a1-6ae5bf1c6cab",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "udupi"
+      },
+      {
+        "action_uid": "7b44e78e-d6d9-44ad-8331-3930b3d959b6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ac4a51b1-8226-4c9e-9429-9f98fa8a3065",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "15c3fad5-9d64-4a00-8a87-6c08903846c7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "acf2309a-3542-43c5-a8cb-3fef021a5c0b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "97a7578d-a8e2-4089-88bc-e45292ac3435",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a2a4a0ae-d58f-4e0c-9c4b-84c36e89dbe8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "cabd36a8-0a4b-43c8-a930-64ae46695583",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "5be16eae-be60-40bd-ab2c-acfab3a0cd36",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "13f39fc7-d314-4c0a-afec-4a96349324c6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "3a4e82f3-9dd3-42b4-9302-c5e41465df9e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "77299dab-129b-4d1d-a419-48f5c2ba558a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "95a5b4f9-e96e-4315-abec-cd2a380ae344",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8c53712e-89d1-46d1-bfe6-d2ace827c9ef",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "cfa92282-3f8c-4a8b-a7c5-4cb5ad14ef19",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d5abb011-938b-47a2-965b-33584ed07f91",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "1ca75cb6-4ad0-4233-bba6-b07ccfdec468",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c9b23ba4-feaa-4d70-b31e-4ab45b0de665",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "ccb50965-fe39-45c7-8e51-1f00048585d7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "88c6723c-7217-4add-893d-bf5d72b68db8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "2bce1096-f573-4752-94a9-e139ce37eb27",
+    "trajectory_id": "2bce1096-f573-4752-94a9-e139ce37eb27_traj",
+    "source_split": "train",
+    "website": "ticketcenter",
+    "domain": "Entertainment",
+    "subdomain": "Event",
+    "confirmed_task": "Find the list of off-Broadway theatre shows on April 19",
+    "action_reprs": [
+      "[button]  THEATRE -> CLICK",
+      "[link]  Off-Broadway -> CLICK",
+      "[button]  All dates -> CLICK",
+      "[textbox]  Select Date Range -> CLICK",
+      "[gridcell]  19 -> CLICK",
+      "[input]   -> CLICK",
+      "[gridcell]  19 -> CLICK",
+      "[button]  Apply -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "e5453e8d-5e53-4cbb-b9b5-9066cf3ff1e0",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c2d92dd0-dd6a-4957-abed-473e7a82bd0a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8d91ee68-49ba-4c63-a109-0a0728c06026",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8126292b-9121-4097-ae47-90374a2d66b6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2f2fab58-539a-48d5-acac-1c7f8dcd741a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "272ad721-8eb9-4e16-b522-ec352a3edc47",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "dd2e43c1-312e-420a-b90a-c274075490db",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c8a5297b-22ae-40b2-9e2e-b4950bd670f8",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "4d73937b-3be7-4f5f-950f-b1905244a2ac",
+    "trajectory_id": "4d73937b-3be7-4f5f-950f-b1905244a2ac_traj",
+    "source_split": "train",
+    "website": "ticketcenter",
+    "domain": "Entertainment",
+    "subdomain": "Event",
+    "confirmed_task": "Show MLB tickets for this weekend and select the next one.",
+    "action_reprs": [
+      "[button]  SPORTS -> HOVER",
+      "[link]  All MLB Tickets -> CLICK",
+      "[button]  All dates -> CLICK",
+      "[link]  This weekend -> CLICK",
+      "[link]  TICKETS -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "eb57cac8-928c-4777-8c81-103790610108",
+        "op": "CLICK",
+        "original_op": "HOVER",
+        "value": ""
+      },
+      {
+        "action_uid": "0f806e67-309d-409d-8959-e24867e11888",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "0a6e420e-940c-499c-a0b2-5bcd58f42594",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8f0334e0-1f8a-4958-9416-68b2d03744a1",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "cf8a0b6f-dde7-4ec5-959a-23c1fd331528",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "5199e802-2fce-448d-8859-3cdf57b8dada",
+    "trajectory_id": "5199e802-2fce-448d-8859-3cdf57b8dada_traj",
+    "source_split": "train",
+    "website": "ticketcenter",
+    "domain": "Entertainment",
+    "subdomain": "Event",
+    "confirmed_task": "Go to the list of ballet event for the next 30 days.",
+    "action_reprs": [
+      "[textbox]  Search for artists, teams or venues... -> TYPE: Ballet",
+      "[button]  Search -> CLICK",
+      "[button]  All dates -> CLICK",
+      "[link]  Next 30 days -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "c1b6e8bd-86ad-45bf-91b1-1afa13bf0167",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "Ballet"
+      },
+      {
+        "action_uid": "d2462cfe-1b26-4571-be84-5f838fdcbd5f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "945a12bb-d7e9-4fca-b017-2f102026def7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "bb8662a9-6602-4a34-814b-7c8c9177374e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "549452ab-637a-4997-bce1-5898541bb288",
+    "trajectory_id": "549452ab-637a-4997-bce1-5898541bb288_traj",
+    "source_split": "train",
+    "website": "ticketcenter",
+    "domain": "Entertainment",
+    "subdomain": "Event",
+    "confirmed_task": "Show me all NFL tickets",
+    "action_reprs": [
+      "[button]  SPORTS -> HOVER",
+      "[tab]  NFL -> HOVER",
+      "[link]  All NFL Tickets -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "3a060beb-0619-4c77-8131-7ffe4c62debf",
+        "op": "CLICK",
+        "original_op": "HOVER",
+        "value": ""
+      },
+      {
+        "action_uid": "218bb404-5a73-4d8f-a72d-1b680a898e89",
+        "op": "CLICK",
+        "original_op": "HOVER",
+        "value": ""
+      },
+      {
+        "action_uid": "1cba5090-1401-4ce5-ab29-6dbb9aaaac26",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "55631305-2957-4343-b4f7-73aa68acba47",
+    "trajectory_id": "55631305-2957-4343-b4f7-73aa68acba47_traj",
+    "source_split": "train",
+    "website": "ticketcenter",
+    "domain": "Entertainment",
+    "subdomain": "Event",
+    "confirmed_task": "Buy two tickets for the Boston Red Sox vs. New York Yankees game on August 18th, with a total cost of no more than $200.",
+    "action_reprs": [
+      "[textbox]  Search for artists, teams or venues... -> TYPE: red sox vs yankees",
+      "[button]  Search -> CLICK",
+      "[link]  TICKETS -> CLICK",
+      "[span]   -> CLICK",
+      "[label]  2 -> CLICK",
+      "[span]   -> CLICK",
+      "[input]   -> TYPE: 200",
+      "[span]  Prices with Fees -> CLICK",
+      "[button]  Done -> CLICK",
+      "[button]  $83.95/ea -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "b0a24212-9aae-4fbc-a62d-bc7129890aec",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "red sox vs yankees"
+      },
+      {
+        "action_uid": "aa72534c-0de6-4c4c-8d2e-378dd9bb25ec",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b11ff5db-7e2a-487f-846e-fcc2b67d1485",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "68b6885c-7c57-4f87-ade1-d3925f70644e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "64eb802f-8390-4ffb-8a72-1f10211fffbe",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "4fd7ad19-c79f-4e47-8648-652053edfafb",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "46d1aec9-efcf-40c7-bfeb-13d5c0db36c2",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "200"
+      },
+      {
+        "action_uid": "d1c03c4f-03c1-42df-a1eb-752d2d674a7f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b66d3924-665c-4d00-89ce-3af5bbdefa0b",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "246aee0e-e7fc-4389-9483-9e2f31bc629a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "13f1648c-9de8-497d-bed3-02096206dc5f",
+    "trajectory_id": "13f1648c-9de8-497d-bed3-02096206dc5f_traj",
+    "source_split": "train",
+    "website": "uniqlo",
+    "domain": "Shopping",
+    "subdomain": "Fashion",
+    "confirmed_task": "Add two pairs of women's Pink sweet pants in XXL size to your cart and view your cart.",
+    "action_reprs": [
+      "[link]  WOMEN -> CLICK",
+      "[tab]  Bottoms -> CLICK",
+      "[link]  Pants -> CLICK",
+      "[gridcell]  Category -> CLICK",
+      "[input]   -> CLICK",
+      "[option]  Sweatpants -> CLICK",
+      "[heading]  Sweatpants -> CLICK",
+      "[checkbox]  PINK -> CLICK",
+      "[checkbox]  XXL -> CLICK",
+      "[input]   -> CLICK",
+      "[option]  2 -> CLICK",
+      "[button]  ADD TO CART -> CLICK",
+      "[button]  VIEW CART -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "fb5b3b82-7410-4d95-b743-5441b8e24ece",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2616aadf-415f-4074-990c-4b08b8a936f7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6c2838cc-2eba-4e57-ba2b-91edc2804240",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e62362e7-8e6f-4005-a005-b8bdb6c3d5bf",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8782d364-4e18-44ff-9aee-4e1c21c11ed6",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "88dec089-2b92-494a-b781-c7f3e9cafe3e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a2e91cde-5120-4851-a140-2dcd34d9e26e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "af8d6e2e-cb67-4ba2-b95d-734aeb121700",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2ca10cfe-4ab1-488f-b16d-305182e3c99f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6547e39b-5ccc-4df5-8668-44a769d70fd5",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6661dc2d-7358-4707-b483-256abecef314",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "9ac267ec-b83a-4ee9-9fba-e0beedd3f174",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "960ebc24-1a13-4086-afd4-fd6e30b783fe",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "1267fbd8-54c8-4f2e-8471-b13c4de332c7",
+    "trajectory_id": "1267fbd8-54c8-4f2e-8471-b13c4de332c7_traj",
+    "source_split": "train",
+    "website": "airbnb",
+    "domain": "Travel",
+    "subdomain": "Hotel",
+    "confirmed_task": "Search for a tiny home anywhere for an adult and 2 pets to stay in from april 10 to april 12",
+    "action_reprs": [
+      "[path]   -> CLICK",
+      "[span]  Tiny homes -> CLICK",
+      "[button]  Check in / Check out Any week -> CLICK",
+      "[button]  10, Monday, April 2023. Available. Select as check... -> CLICK",
+      "[button]  12, Wednesday, April 2023. Available. Select as ch... -> CLICK",
+      "[div]  Add guests -> CLICK",
+      "[svg]   -> CLICK",
+      "[svg]   -> CLICK",
+      "[path]   -> CLICK",
+      "[span]   -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "6d116eff-c3b7-4891-95a3-0b5b5e329487",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "b5988297-2c7c-4904-b027-838dccd562f7",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "e5dc29b7-feed-4ca1-addd-d63034be1d36",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "091dfb3c-d0d9-49c2-a922-18e6468bc29a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "a1e3d261-9e4d-4aa2-b851-4df6032e1794",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "449e6dc9-7f9a-408c-bed6-3d20020ddddf",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "6c4c56ad-2e3a-4404-9768-189d35e4b8cb",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "128aebd7-56f6-4d88-938a-b1fbd20e04be",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "49953e8a-3f9f-4909-beee-9435c905a60e",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "f6508bab-5a51-44f5-abd0-fa6863f8d1d0",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "851ed4e6-51ee-47ad-a861-a28bdc61a102",
+    "trajectory_id": "851ed4e6-51ee-47ad-a861-a28bdc61a102_traj",
+    "source_split": "train",
+    "website": "tesla",
+    "domain": "Shopping",
+    "subdomain": "Auto",
+    "confirmed_task": "Open the page to schedule a Model X test drive.",
+    "action_reprs": [
+      "[button]  Menu -> CLICK",
+      "[link]  Demo Drive -> CLICK",
+      "[button]  Model X -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "077c4e0c-a79b-448b-8bfe-0973673ac73a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "c3012402-7d2b-49f8-8a3f-4a6ff36ca6a4",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d47cbb1c-7d70-445f-a145-f4af8c2e35f9",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "8e7b05d4-7dfb-4345-af2b-3e1dcd1c2ea2",
+    "trajectory_id": "8e7b05d4-7dfb-4345-af2b-3e1dcd1c2ea2_traj",
+    "source_split": "train",
+    "website": "tesla",
+    "domain": "Shopping",
+    "subdomain": "Auto",
+    "confirmed_task": "Show me a map with charging stations in London.",
+    "action_reprs": [
+      "[button]  Menu -> CLICK",
+      "[link]  Charging -> CLICK",
+      "[link]  Find Us -> CLICK",
+      "[textbox]  search input -> TYPE: London",
+      "[li]  London, UK -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "dd2bc1cb-54ad-4246-8005-f7287aa435c4",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "fe4765b7-9e8e-44f9-946c-dca01ee3049a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "7232efcc-03a5-4cf6-abca-52d962651164",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "413185f7-a793-4718-93ff-3c654b9f1c1d",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "London"
+      },
+      {
+        "action_uid": "0b5688cb-71a1-4fcf-a156-bbac0e95e816",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "9cd20dc6-d2a5-4e8f-9252-549f2c51413c",
+    "trajectory_id": "9cd20dc6-d2a5-4e8f-9252-549f2c51413c_traj",
+    "source_split": "train",
+    "website": "tesla",
+    "domain": "Shopping",
+    "subdomain": "Auto",
+    "confirmed_task": "View inventory of Tesla Model S that are blue and new with 19\" wheels within 50 miles of zip code 60602.",
+    "action_reprs": [
+      "[link]  Model S -> CLICK",
+      "[link]  View Inventory -> CLICK",
+      "[image]   -> CLICK",
+      "[checkbox]  19\" Wheels -> CLICK",
+      "[textbox]  Registration Zip Code Where you will register the ... -> TYPE: 60602",
+      "[combobox]  Search within -> SELECT: 50 miles"
+    ],
+    "actions": [
+      {
+        "action_uid": "05ba30e9-0691-4d0c-9307-8af2746cc476",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "8be9df77-6ac7-4962-bc6b-b8084033cc94",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "2f81be7c-f273-4a83-b51b-053f4364536a",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "477c560d-170c-41df-8298-b3a5df097ed9",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "d06ad609-36ae-4f0b-8623-247fa123cbb0",
+        "op": "TYPE",
+        "original_op": "TYPE",
+        "value": "60602"
+      },
+      {
+        "action_uid": "9dbba049-3068-4fc1-853d-a48205645473",
+        "op": "SELECT",
+        "original_op": "SELECT",
+        "value": "50 miles"
+      }
+    ]
+  },
+  {
+    "dataset_name": "Mind2Web",
+    "task_id": "cdbd410d-170a-426d-b6d2-60dafaffe853",
+    "trajectory_id": "cdbd410d-170a-426d-b6d2-60dafaffe853_traj",
+    "source_split": "train",
+    "website": "tesla",
+    "domain": "Shopping",
+    "subdomain": "Auto",
+    "confirmed_task": "Show me the best seller accessories for the Model X",
+    "action_reprs": [
+      "[link]  Shop -> CLICK",
+      "[link]  Shop Now -> CLICK",
+      "[heading]  Best Sellers -> CLICK"
+    ],
+    "actions": [
+      {
+        "action_uid": "e7cce11b-e3ef-43c9-bc41-3f6db08f9d2f",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "1c12e058-d63b-4514-bba9-ca7c1cec49d1",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      },
+      {
+        "action_uid": "76ee2054-93df-48ad-8b0f-8af2935d3b97",
+        "op": "CLICK",
+        "original_op": "CLICK",
+        "value": ""
+      }
+    ]
+  }
+]

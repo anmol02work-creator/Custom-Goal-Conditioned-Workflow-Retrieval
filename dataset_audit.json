@@ -1,0 +1,60 @@
+{
+  "primary_dataset": {
+    "dataset_name": "Mind2Web: Towards a Generalist Agent for the Web",
+    "paper": "Mind2Web: Towards a Generalist Agent for the Web (Deng et al., NeurIPS 2023)",
+    "official_url": "https://osu-nlp-group.github.io/Mind2Web/",
+    "repository": "https://github.com/OSU-NLP-Group/Mind2Web",
+    "huggingface_hub": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "version_commit": "17ece8eb89862368edc0cc806acee6fca5163474 (Hugging Face main branch)",
+    "number_of_original_tasks": 2350,
+    "number_of_trajectories": 2350,
+    "number_of_websites_domains": "137 websites spanning 31 diverse domains",
+    "available_fields": [
+      "annotation_id (str: unique task uuid)",
+      "website (str: target website domain)",
+      "domain (str: macro web domain category)",
+      "subdomain (str: specialized web subdomain)",
+      "confirmed_task (str: natural language user goal)",
+      "action_reprs (list[str]: human-readable action trajectory step strings)",
+      "actions (list[dict]: detailed action objects with action_uid, operation: op, original_op, value)",
+      "raw_html (str: raw DOM tree snapshot before action)",
+      "cleaned_html (str: pruned DOM tree snapshot)"
+    ],
+    "missing_fields": [
+      "execution_latency_per_step (not logged in dataset)",
+      "network_response_headers (omitted by design)"
+    ],
+    "task_id_format": "UUIDv4 string (e.g., '7bda9645-0b5f-470a-8dd7-6af0bff4da68')",
+    "trajectory_id_format": "UUIDv4 string matching annotation_id (e.g., '7bda9645-0b5f-470a-8dd7-6af0bff4da68_traj')",
+    "suitability_assessment": "EXCELLENT. Native human-verified interaction traces directly coupled with high-level user instructions across diverse real-world websites."
+  },
+  "external_benchmark": {
+    "dataset_name": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+    "paper": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments (Xie et al., NeurIPS 2024)",
+    "official_url": "https://os-world.github.io/",
+    "repository": "https://github.com/xlang-ai/OSWorld",
+    "huggingface_hub": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_verified_trajs",
+    "license": "Apache 2.0 License",
+    "version_commit": "v2.0 release manifests (2024/2025)",
+    "number_of_original_tasks": 369,
+    "number_of_trajectories": "Execution-based agent trajectories (stored in external evaluation run archives)",
+    "number_of_websites_domains": "10 desktop application domains (Chrome, GIMP, LibreOffice Calc/Writer/Impress, Thunderbird, VLC, VS Code, OS, Multi-apps)",
+    "available_fields": [
+      "id (str: task uuid)",
+      "instruction (str: natural language goal)",
+      "config (list[dict]: system state configuration parameters)",
+      "evaluator (dict: functional post-execution test scripts)",
+      "related_apps (list[str]: required application binaries)",
+      "source (str: task origin)",
+      "snapshot (str: VM image snapshot tag)"
+    ],
+    "missing_fields": [
+      "native_human_action_trajectories_in_task_spec (action trajectories are not stored inside task JSONs; they are generated dynamically during agent VM execution or downloaded as external model run zips)",
+      "serialized_action_reprs_in_task_manifest"
+    ],
+    "task_id_format": "UUIDv4 string (e.g., 'bb5e4c0d-f964-439c-97b6-bdb9747de3f4')",
+    "trajectory_id_format": "External trajectory log path (e.g., 'trajectories/')",
+    "suitability_assessment": "AUDITED FOR GENERALIZATION. Serves as desktop environment generalization benchmark. For goal-to-workflow retrieval training, Mind2Web provides natively paired human execution workflows, whereas OSWorld decouples tasks from execution traces."
+  }
+}
