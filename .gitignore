@@ -39,10 +39,8 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Large binary model checkpoints (>50MB triggers GitHub warning, >100MB rejected)
+# Large archives
 jarvis_workflow_retrieval_model.zip
-jarvis_workflow_retrieval_model/model/*.safetensors
-jarvis_workflow_retrieval_model/model/*.bin
 
 # Separate Model B standalone repository
 Stored-State vs Current-State Mismatch Classifier/
